@@ -1,0 +1,80 @@
+.DS_Store
+.localized
+4K Video Downloader.app
+Accelerate.app
+AdGuard VPN.app
+AdGuard for Safari.app
+AlDente.app
+AltTab.app
+AppCleaner.app
+CheatSheet.app
+Discord.app
+Dropover.app
+Eclipse Java.app
+Enki.app
+Firefox.app
+Google Chrome.app
+HandBrake.app
+IntelliJ IDEA.app
+Keynote.app
+Lunar.app
+MAMP
+Microsoft Teams.app
+Nightshift.app
+Numbers.app
+OneDrive.app
+Pages.app
+PiPer.app
+Rectangle.app
+Safari.app
+Spotify.app
+Telegram.app
+The Unarchiver.app
+UTM.app
+Utilities
+VLC.app
+Visual Studio Code.app
+Visual Studio.app
+WhatsApp.app
+eToro.app
+iMovie.app
+iTerm.app
+4K Video Downloader.app
+Accelerate.app
+AdGuard VPN.app
+AdGuard for Safari.app
+AlDente.app
+AltTab.app
+AppCleaner.app
+CheatSheet.app
+Discord.app
+Dropover.app
+Eclipse Java.app
+Enki.app
+Firefox.app
+Google Chrome.app
+HandBrake.app
+IntelliJ IDEA.app
+Keynote.app
+Lunar.app
+MAMP
+Microsoft Teams.app
+Nightshift.app
+Numbers.app
+OneDrive.app
+Pages.app
+PiPer.app
+Rectangle.app
+Safari.app
+Spotify.app
+Telegram.app
+The Unarchiver.app
+UTM.app
+Utilities
+VLC.app
+Visual Studio Code.app
+Visual Studio.app
+WhatsApp.app
+eToro.app
+iMovie.app
+iTerm.app
