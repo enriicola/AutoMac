@@ -195,7 +195,7 @@ sudo rm -r /Users/enrico/Desktop && ln -s -n /Users/enrico/onedrive\ -\ unige.it
 # adding my scripts to the local user bin directory
 sudo mkdir ../../usr/local/bin 
 sudo cp onedrive\ -\ unige.it/my_projects/copy-of-bin/* ../../usr/local/bin
-sudo chmod +x ../../usr/local/bin/my-git-push
+sudo chmod -R 777 ../../usr/local/bin/my-git-push
 
 # at this point i should be sure to have installed vs for mac, so i'll remove the installer app
 sudo rm -rf ../../Applications/Install\ Visual\ Studio\ for\ Mac.app
