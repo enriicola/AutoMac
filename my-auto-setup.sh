@@ -63,7 +63,7 @@ open https://aka.ms/vs/mac/download
 echo -e "\033[1;31m Wait for the VS download to be done! 🛑 \033[0m"
 read -p "Press enter to continue 😬"
 
-echo -e "\033[0;33m This next command will be a little slow 🐢 \033[0m"
+echo -e "\033[0;33m This next command will be a little slow 🐢\n In case of failure, you'll have to install VS manually 🥶 \033[0m"
 hdiutil mount Downloads/visualstudioformacinstaller-*.dmg
 # open -W  Downloads/visualstudioformacinstaller-*.dmg # less fun alternative
 sudo cp -R "/Volumes/Visual Studio for Mac Installer/Install Visual Studio for Mac.app" /Applications
@@ -215,6 +215,11 @@ echo
 
 # TODO preferenze dock, quali app pinnare nella dock e mettere ordine nel launchpad
 echo "\033[0;36m Now I will edit some dock's preferences 🌟 \033[0m"
+# TODO scrivi il codice in ordine di app (verranno inserite tipo lista)
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Enki.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Visual Studio.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+killall cfprefsd
+killall Dock
 
 
 read -p "Press enter to restart MacOs 🔁"
