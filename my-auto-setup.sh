@@ -187,7 +187,7 @@ open -a dropover
 # CODE TO RENAME ALL FILES TO LOWERCASE...and remove directories i don't use
 for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done
 cd
-rm -r movies && rm bin
+rm -r movies && rm bin && rmdir applicazioni
 
 # sync desktop on onedrive command
 sudo rm -r /Users/enrico/Desktop && ln -s -n /Users/enrico/onedrive\ -\ unige.it /Users/enrico/Desktop
@@ -230,12 +230,10 @@ defaults write com.apple.dock persistent-apps -array
 # ordine app dock: safari mail foto calendario promemoria note appstore imovie monitoraggioattività enki etoro terminale teams discord mamp eclipse intellij vs vsc utm iterm2 +...
 # ...+ adguardvpn handbrake vlc firefox spotify telegram whatsapp appcleaner onedrivetrash downloads
 
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>GUID</key><integer>455213948</integer><key>tile-data</key><dict><key>book</key><data>Ym9va0QCAAAAAAQQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZAEAAAQAAAADAwAAAAAAIAYAAAABAQAAU3lzdGVtAAAMAAAAAQEAAEFwcGxpY2F0aW9ucwwAAAABAQAAQ2FsZW5kYXIuYXBwDAAAAAEGAAAQAAAAIAAAADQAAAAIAAAABAMAABUAAAD///8PCAAAAAQDAAAXAAAA////DwgAAAAEAwAA7AoAAP///w8MAAAAAQYAAFwAAABsAAAAfAAAAAgAAAAABAAAQcR/aqKAAAAYAAAAAQIAAAIAAAAAAAAADwAAAAAAAAAAAAAAAAAAAAgAAAABCQAAZmlsZTovLy8MAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAEAwAAAOAB4+gAAAAkAAAAAQEAAEY4MURCMzNFLUMxNEYtNDA0Ny1CMDFDLTQwMEVGNjgzNDhGQRgAAAABAgAAgQAAAAEAAADvEwAAAQAAAAAAAAAAAAAAAQAAAAEBAAAvAAAAAAAAAAEFAACoAAAA/v///wEAAAAAAAAADQAAAAQQAABIAAAAAAAAAAUQAACMAAAAAAAAABAQAACwAAAAAAAAAEAQAACgAAAAAAAAAAIgAABQAQAAAAAAAAUgAADQAAAAAAAAABAgAADgAAAAAAAAABEgAAAEAQAAAAAAABIgAAD0AAAAAAAAABMgAACgAAAAAAAAACAgAAAwAQAAAAAAADAgAABcAQAAAAAAABDQAAAEAAAAAAAAAA==</data><key>bundle-identifier</key><string>com.apple.Safari</string><key>dock-extra</key><true/><key>file-data</key><dict><key>_CFURLString</key><string>file:///System/Applications/Safari.app/</string><key>_CFURLStringType</key><integer>15</integer></dict><key>file-label</key><string>Calendar</string><key>file-mod-date</key><integer>3748941381</integer><key>file-type</key><integer>41</integer><key>is-beta</key><false/><key>parent-mod-date</key><integer>3748941381</integer></dict><key>tile-type</key><string>file-tile</string></dict>"
-
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Safari.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 # defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Foto.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 
-
+    # queste funzionano
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Enki.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Visual Studio.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 killall cfprefsd

@@ -1,5 +1,6 @@
-
+# https://github.com/RexYuan/Blemishine/tree/main/preferences
 # https://apple.stackexchange.com/q/362231/130792
+
 .PHONY: dock
 dock:
 	defaults write com.apple.dock persistent-apps -array
