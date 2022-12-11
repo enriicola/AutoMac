@@ -3,6 +3,8 @@
 
 echo "\033[0;36m Welcome! 🦆 \n my-auto-setup started! 🚀 \033[0m"
 
+# TODO trasformare tutti i commenti in echo in inglese :)
+# TODO trascrivere a commento le descrizioni dello stato del mac dagli screen :)
 defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
 # undo: defaults write com.apple.dock autohide-delay -float 0.5; defaults write com.apple.dock autohide-time-modifier -int 0.5 ;killall Dock
 
@@ -30,7 +32,6 @@ defaults write com.apple.Dock showhidden -bool TRUE && killall Dock
 # TODO via script modify barra strumenti Safari
 # TODO via script change profile picture for the mac/icloud
 # TODO via script try to uninstall some defualt apps
-# TODO via script metti tutte le app nella dock 
 # TODO via script rimuovi alcune app dalla dock
 # TODO via script modifica preferenze dock 
 # TODO via script modify system preferences
@@ -48,7 +49,7 @@ defaults write com.apple.Dock showhidden -bool TRUE && killall Dock
 
 # TODO trascrivi come commenti la disposizione delle app nel launchpad
 
-
+# some apps without brew script I have to manually download :(
 open https://apps.apple.com/us/app/accelerate-for-safari/id1459809092 
 open https://apps.apple.com/it/app/piper/id1421915518?mt=12
 open https://apps.apple.com/it/app/enki-learn-coding-programming/id993753145
@@ -76,8 +77,10 @@ sudo open -a /Applications/Install\ Visual\ Studio\ for\ Mac.app
 hdiutil unmount /Volumes/Visual\ Studio\ for\ Mac\ Installer
 rm Downloads/visualstudioformacinstaller-*.dmg
 
+# installing homebrew :)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# and all the other apps i need (also opening them to setup some preferences)
 brew install --cask onedrive
 sudo open -a onedrive
 
@@ -85,6 +88,8 @@ brew install --cask aldente
 sudo open -a aldente
 
 brew install git
+git config --global user.email "enrico.pezzano@outlook.it"
+git config --global user.name "EnricoPezzano"
 
 brew install --cask microsoft-teams
 sudo open -a "microsoft teams"
@@ -165,10 +170,9 @@ sudo open -a "visual studio"
 
 brew install --cask oracle-jdk-javadoc
 
-# brew install mono
+brew upgrade # just to be sure :)
 
-brew upgrade
-
+# hopefully these app'll be installed, so i can open'em to setup some preferences
 open -a enki
 open -a accelerate
 open -a piper
@@ -180,21 +184,30 @@ open -a keynote
 open -a numbers
 open -a dropover
 
-# CODE TO RENAME ALL FILES TO LOWERCASE
+# CODE TO RENAME ALL FILES TO LOWERCASE...and remove directories i don't use
 for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done
+cd
+rm -r movies && rm bin
 
 # sync desktop on onedrive command
 sudo rm -r /Users/enrico/Desktop && ln -s -n /Users/enrico/onedrive\ -\ unige.it /Users/enrico/Desktop
 
-cd
-rm -r movies && rm bin
-
+# adding my scripts to the local user bin directory
 sudo mkdir ../../usr/local/bin 
 sudo cp onedrive\ -\ unige.it/my_projects/copy-of-bin/* ../../usr/local/bin
 sudo chmod +x ../../usr/local/bin/my-git-push
 
+# at this point i should be sure to have installed vs for mac, so i'll remove the installer app
 sudo rm -rf ../../Applications/Install\ Visual\ Studio\ for\ Mac.app
 
+# utm's virtual machines wait from onedrive sync + move to the right utm directory
+echo -e "\033[1;31m Wait for the UTM's virtual machine download to be done! 🛑 \033[0m"
+echo "\033[0;36m (From OneDrive sync) \033[0m"
+read -p "Press enter to continue 😬"
+sudo mv onedrive\ -\ unige.it/Windows-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
+sudo mv onedrive\ -\ unige.it/ubuntu-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
+
+# bash script to chech if it's all installed correctly
 cd /Applications
 cd
 ls >> /Users/enrico/actual-app-list.txt
@@ -207,15 +220,22 @@ if status; then
     open /Applications/actual-app-list.txt
     exit
 fi
-
 echo -e "\033[0;32m Tutto installato correttamente 😄 \033[0m"
 rm /Users/enrico/actual-app-list.txt
 
-echo 
 
 # TODO preferenze dock, quali app pinnare nella dock e mettere ordine nel launchpad
 echo "\033[0;36m Now I will edit some dock's preferences 🌟 \033[0m"
-# TODO scrivi il codice in ordine di app (verranno inserite tipo lista)
+defaults write com.apple.dock persistent-apps -array
+# ordine app dock: safari mail foto calendario promemoria note appstore imovie monitoraggioattività enki etoro terminale teams discord mamp eclipse intellij vs vsc utm iterm2 +...
+# ...+ adguardvpn handbrake vlc firefox spotify telegram whatsapp appcleaner onedrivetrash downloads
+
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>GUID</key><integer>455213948</integer><key>tile-data</key><dict><key>book</key><data>Ym9va0QCAAAAAAQQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZAEAAAQAAAADAwAAAAAAIAYAAAABAQAAU3lzdGVtAAAMAAAAAQEAAEFwcGxpY2F0aW9ucwwAAAABAQAAQ2FsZW5kYXIuYXBwDAAAAAEGAAAQAAAAIAAAADQAAAAIAAAABAMAABUAAAD///8PCAAAAAQDAAAXAAAA////DwgAAAAEAwAA7AoAAP///w8MAAAAAQYAAFwAAABsAAAAfAAAAAgAAAAABAAAQcR/aqKAAAAYAAAAAQIAAAIAAAAAAAAADwAAAAAAAAAAAAAAAAAAAAgAAAABCQAAZmlsZTovLy8MAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAEAwAAAOAB4+gAAAAkAAAAAQEAAEY4MURCMzNFLUMxNEYtNDA0Ny1CMDFDLTQwMEVGNjgzNDhGQRgAAAABAgAAgQAAAAEAAADvEwAAAQAAAAAAAAAAAAAAAQAAAAEBAAAvAAAAAAAAAAEFAACoAAAA/v///wEAAAAAAAAADQAAAAQQAABIAAAAAAAAAAUQAACMAAAAAAAAABAQAACwAAAAAAAAAEAQAACgAAAAAAAAAAIgAABQAQAAAAAAAAUgAADQAAAAAAAAABAgAADgAAAAAAAAABEgAAAEAQAAAAAAABIgAAD0AAAAAAAAABMgAACgAAAAAAAAACAgAAAwAQAAAAAAADAgAABcAQAAAAAAABDQAAAEAAAAAAAAAA==</data><key>bundle-identifier</key><string>com.apple.Safari</string><key>dock-extra</key><true/><key>file-data</key><dict><key>_CFURLString</key><string>file:///System/Applications/Safari.app/</string><key>_CFURLStringType</key><integer>15</integer></dict><key>file-label</key><string>Calendar</string><key>file-mod-date</key><integer>3748941381</integer><key>file-type</key><integer>41</integer><key>is-beta</key><false/><key>parent-mod-date</key><integer>3748941381</integer></dict><key>tile-type</key><string>file-tile</string></dict>"
+
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Safari.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Foto.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+
+
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Enki.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Visual Studio.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 killall cfprefsd
