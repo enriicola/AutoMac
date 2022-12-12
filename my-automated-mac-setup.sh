@@ -3,8 +3,9 @@
 cd ..
 echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m" 
 
-# TODO trascrivere a commento le descrizioni dello stato del mac dagli screen :)
-# TODO installa vm di macos per screenare le impostazioni di default :)
+# TODO trascrivere a commento le descrizioni dello stato del mac dagli screen 
+# TODO installa vm di macos per screenare le impostazioni di default 
+# TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire... 
 
 echo "\033[0;34m Setting to 0 the wait time for showing the dock ⏲ \033[0m"
 defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
