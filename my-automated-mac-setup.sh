@@ -216,3 +216,6 @@ sudo shutdown -r now
 #   && sudo mv /tmp/hblock /usr/local/bin/hblock \
 #   && sudo chown 0:0 /usr/local/bin/hblock \
 #   && sudo chmod 755 /usr/local/bin/hblock
+
+# To instead install a .pkg, use this command:
+# sudo installer -package /path/to/package -target "/Volumes/Macintosh HD"
