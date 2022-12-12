@@ -4,6 +4,7 @@ cd ..
 echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m" 
 
 # TODO trascrivere a commento le descrizioni dello stato del mac dagli screen :)
+# TODO installa vm di macos per screenare le impostazioni di default :)
 
 echo "\033[0;34m Setting to 0 the wait time for showing the dock ⏲ \033[0m"
 defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
@@ -26,7 +27,7 @@ defaults write com.apple.Dock showhidden -bool TRUE && killall Dock
 #tell application "Finder"
 #set desktop picture to POSIX file "/Library/Desktop Pictures/Solid Colors/Catalina.madesktop"
 #end tell
-# TODO via script modify widget 
+# TODO remove all widget; aggiungi meteo(grande) e sotto eventiCalendario(grande)
 # TODO via script modify barra strumenti Finder
 # TODO via script modify barra strumenti Safari
 # TODO via script change profile picture for the mac/icloud
@@ -62,15 +63,13 @@ echo -e "\033[1;31m Wait for the Visual Studio download to be done! 🛑 \033[0m
 read -p "Press enter to continue 😬"
 
 echo -e "\033[0;33m This next command will be a little slow 🐢\n In case of failure, you'll have to install VS manually 🥶 \033[0m"
-hdiutil mount /Users/enrico/Downloads/visualstudioformacinstaller-*.dmg
-# open -W  Downloads/visualstudioformacinstaller-*.dmg # less fun alternative
+sudo chmod -R 777 Downloads/visualstudioformacinstaller-*.dmg
+sudo hdiutil attach Downloads/visualstudioformacinstaller-*.dmg
 sudo cp -R "/Volumes/Visual Studio for Mac Installer/Install Visual Studio for Mac.app" /Applications
 sudo codesign --force --deep --sign - /Applications/Install\ Visual\ Studio\ for\ Mac.app
 sudo xattr -d -r com.apple.quarantine /Applications/Install\ Visual\ Studio\ for\ Mac.app 
 sudo chmod -R 755 /Applications/Install\ Visual\ Studio\ for\ Mac.app/Contents/MacOS/Install_Visual_Studio 
 sudo open -a /Applications/Install\ Visual\ Studio\ for\ Mac.app
-# To instead install a .pkg, use this command:
-# sudo installer -package /path/to/package -target "/Volumes/Macintosh HD"
 hdiutil unmount /Volumes/Visual\ Studio\ for\ Mac\ Installer
 rm /Users/enrico/Downloads/visualstudioformacinstaller-*.dmg
 
@@ -78,41 +77,39 @@ echo "\033[0;34m Installing Homebrew! 🍺 \033[0m"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "\033[0;34m Installing all the other apps i need (also I'll open them to setup some preferences) 💻🖥 \033[0m"
-brew install --cask onedrive; #sudo open -a onedrive
-brew install --cask aldente; #sudo open -a aldente
+brew install --cask onedrive; sudo open -a onedrive
+brew install --cask aldente; sudo open -a aldente
 brew install git
 git config --global user.email "enrico.pezzano@outlook.it"
 git config --global user.name "EnricoPezzano"
-brew install --cask microsoft-teams; #sudo open -a "microsoft teams"
-brew install --cask whatsapp; #sudo open -a whatsapp
-brew install --cask telegram; #sudo open -a telegram
-brew install --cask adguard-vpn; #sudo open -a "adguard vpn"
-brew install --cask iterm2; #sudo open -a iterm2
-brew install --cask rectangle; #sudo open -a rectangle
+brew install --cask microsoft-teams; sudo open -a "microsoft teams"
+brew install --cask whatsapp; sudo open -a whatsapp
+brew install --cask telegram; sudo open -a telegram
+brew install --cask adguard-vpn; sudo open -a "adguard vpn"
+brew install --cask iterm2; sudo open -a iterm2
+brew install --cask rectangle; sudo open -a rectangle
 brew install python #-tk@3.9
 brew install python-tk@3.9
-brew install --cask google-chrome; #sudo open -a "Google Chrome" 
+brew install --cask google-chrome; sudo open -a "Google Chrome" 
 brew install --cask chromedriver
-brew install --cask mamp
-rm -rf /Applications/MAMP\ PRO.app
-#sudo open -a mamp
-brew install --cask utm; #sudo open -a utm
+brew install --cask mamp; rm -rf /Applications/MAMP\ PRO.app; sudo open -a mamp
+brew install --cask utm; sudo open -a utm
 brew install --cask vlc; sudo open -a vlc
-brew install --cask firefox; #sudo open -a firefox
-brew install --cask visual-studio-code; #sudo open -a "visual studio code"
-brew install --cask 4k-video-downloader; #sudo open -a "4k video downloader"
-brew install --cask discord; #sudo open -a discord
-brew install --cask intellij-idea; #sudo open -a "intellij idea"
-brew install --cask alt-tab; #sudo open -a alttab
-brew install --cask cheatsheet; #sudo open -a cheatsheet
-brew install --cask appcleaner; #sudo open -a appcleaner
-brew install --cask lunar; #sudo open -a lunar
+brew install --cask firefox; sudo open -a firefox
+brew install --cask visual-studio-code; sudo open -a "visual studio code"
+brew install --cask 4k-video-downloader; sudo open -a "4k video downloader"
+brew install --cask discord; sudo open -a discord
+brew install --cask intellij-idea; sudo open -a "intellij idea"
+brew install --cask alt-tab; sudo open -a alttab
+brew install --cask cheatsheet; sudo open -a cheatsheet
+brew install --cask appcleaner; sudo open -a appcleaner
+brew install --cask lunar; sudo open -a lunar
 brew install maven
-brew install --cask handbrake; #sudo open -a handbrake
-brew install --cask eclipse-java; #sudo open -a "eclipse java"
-brew install --cask spotify; #sudo open -a spotify
-brew install --cask the-unarchiver; #sudo open -a "the unarchiver"
-brew install --cask visual-studio; #sudo open -a "visual studio"
+brew install --cask handbrake; sudo open -a handbrake
+brew install --cask eclipse-java; sudo open -a "eclipse java"
+brew install --cask spotify; sudo open -a spotify
+brew install --cask the-unarchiver; sudo open -a "the unarchiver"
+brew install --cask visual-studio; sudo open -a "visual studio"
 brew install --cask oracle-jdk-javadoc
 brew upgrade # just to be sure :)
 
@@ -129,8 +126,7 @@ open -a numbers
 open -a dropover
 
 echo "\033[0;34m The next script will rename all to lowercase...and remove directories i don't use 🔡 \033[0m"
-for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done
-cd
+cd; for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done
 rm -r movies && rm bin && rmdir applicazioni
 
 echo "\033[0;34m Syncing OneDrive on desktop... 🌥 \033[0m"
@@ -187,10 +183,20 @@ killall Dock
 # TODO disposizione launchpad: Altro(app che non uso etc), Produttività (pages etc), Estensioni safari(piper, aceelerate, adguard, nightshift), 
 #                              Utility(rectangle, dropover, alttab, aldente, the-unarchiver, cheatsheet, lunar), Strumenti dev(intellij, vs, vsc, developer, eclpipse) + altre app
 
+# TODO tagga come blu(unige) "cd; ../../usr/local/bin", "onedrive/unige", "onedrive/unige/pthread-barrier*" e "onedrive/img_7757.jpg"
+# TODO tagga come rosso "onedrive/appunti n.parodi", "od/auto-setup", "cd; ../../usr/local/bin", cartelle dei corsi correnti (cs, fis, ssgs, icdd, tap), "od/documenti/CV", ...
+                        #..."on/fis/davide.scarra", "od/doc/foto.danni", "od/doc/numbers", "hurt feeling report", "190kg deadlift", "da provare su tinder", "deadlift reel", ...
+                        #..."IMG 4458.PNG, IMG_4459.PNG, IMG_4710.PNG, IMG_4818.PNG, IMG_5816.PNG, IMG_8873.PNG, IMG_8874.PNG, IMG_8875.PNG, IMG_8910.PNG, IMG_8911.PNG, IMG_8912...
+                        #...IMG_8913.PNG, IMG_8914.PNG, IMG_8915.PNG, IMG_8916.PNG, IMG_8917.PNG, IMG_8918.PNG, IMG_8919.PNG, IMG_8921.PNG, IMG_8994.PNG", "just don't quit cbum"...
+                        #..."od/doc/incidente/preventivo danni", "gym/programmazione ntc", "gym/RPReplay_Final1650020006.MP4", "gym/RPReplay_Final1654850997.MP4", ...
+                        #..."scheda filippo d'🌲", "senza nome.pages"
+
+
+
 
 read -p "Press enter to restart MacOs 🔁"
 sudo shutdown -r now
-
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Old script: 
 # brew install --cask xampp
 # brew install --cask rider
@@ -220,3 +226,6 @@ sudo shutdown -r now
 
 # To instead install a .pkg, use this command:
 # sudo installer -package /path/to/package -target "/Volumes/Macintosh HD"
+
+# less fun alternative to manually install VS for mac
+# sudo open -W  Downloads/visualstudioformacinstaller-*.dmg
