@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 ##!/bin/sh
 
-echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m"
+echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m" 
 
 # TODO trascrivere a commento le descrizioni dello stato del mac dagli screen :)
 
