@@ -27,13 +27,10 @@ defaults write com.apple.Dock showhidden -bool TRUE && killall Dock
 #set desktop picture to POSIX file "/Library/Desktop Pictures/Solid Colors/Catalina.madesktop"
 #end tell
 # TODO via script modify widget 
-# TODO via script metti tutte le app in una schermata del launchpad (+ cartella produttivitò con pages etc, cartella utility con rectangle etc, cartella estensioni safari, cartella altro con altre app che non usi)
-# TODO via script apri tutte le app installate per configurare tutto
 # TODO via script modify barra strumenti Finder
 # TODO via script modify barra strumenti Safari
 # TODO via script change profile picture for the mac/icloud
 # TODO via script try to uninstall some defualt apps
-# TODO via script rimuovi alcune app dalla dock
 # TODO via script modifica preferenze dock 
 # TODO via script modify system preferences
 # TODO via script modify menu bar
@@ -48,7 +45,6 @@ defaults write com.apple.Dock showhidden -bool TRUE && killall Dock
 # TODO cambia foto profilo mac :)
 # TODO disattiva salvaschermo
 
-# TODO trascrivi come commenti la disposizione delle app nel launchpad
 
 echo "\033[0;34m Opening some link to apps you have to manually download (no brew script) 🛠 \033[0m"
 open https://apps.apple.com/us/app/accelerate-for-safari/id1459809092 
@@ -138,7 +134,6 @@ for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "`echo $f | tr "[:upper:]" "[:lower
 cd
 rm -r movies && rm bin && rmdir applicazioni
 
-# sync desktop on onedrive command
 echo "\033[0;34m Syncing OneDrive on desktop... 🌥 \033[0m"
 sudo rm -r /Users/enrico/Desktop && ln -s -n /Users/enrico/onedrive\ -\ unige.it /Users/enrico/Desktop
 
@@ -160,7 +155,7 @@ echo "\033[0;36m Now I will edit some dock's preferences 🌟 \033[0m"
 # TODO preferenze dock, quali app pinnare nella dock e mettere ordine nel launchpad
 defaults write com.apple.dock persistent-apps -array
 # ordine app dock: safari mail foto calendario promemoria note appstore imovie monitoraggioattività enki etoro terminale teams discord mamp eclipse intellij vs vsc utm iterm2 +...
-# ...+ adguardvpn handbrake vlc firefox spotify telegram whatsapp appcleaner onedrivetrash downloads
+#                  ...adguardvpn handbrake vlc firefox spotify telegram whatsapp appcleaner onedrivetrash downloads
 
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Safari.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 # defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Foto.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
@@ -187,6 +182,12 @@ if status; then
 fi
 echo -e "\033[0;32m Nothing went wrong! 😄 \033[0m"
 rm /Users/enrico/actual-app-list.txt
+
+
+# TODO trascrivi come commenti la disposizione delle app nel launchpad
+# TODO disposizione launchpad: Altro(app che non uso etc), Produttività (pages etc), Estensioni safari(piper, aceelerate, adguard, nightshift), 
+#                              Utility(rectangle, dropover, alttab, aldente, the-unarchiver, cheatsheet, lunar), Strumenti dev(intellij, vs, vsc, developer, eclpipse) + altre app
+
 
 read -p "Press enter to restart MacOs 🔁"
 sudo shutdown -r now
