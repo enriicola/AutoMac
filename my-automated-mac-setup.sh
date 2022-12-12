@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ##!/bin/sh
-cd ~
+cd ..
 echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m" 
 
 # TODO trascrivere a commento le descrizioni dello stato del mac dagli screen :)
@@ -58,7 +58,7 @@ open https://apps.apple.com/it/app/keynote/id409183694?mt=12
 open https://apps.apple.com/it/app/numbers/id409203825?mt=12
 open https://apps.apple.com/it/app/dropover-easier-drag-drop/id1355679052?mt=12
 open https://aka.ms/vs/mac/download
-echo -e "\033[1;31m Wait for the VS download to be done! 🛑 \033[0m"
+echo -e "\033[1;31m Wait for the Visual Studio download to be done! 🛑 \033[0m"
 read -p "Press enter to continue 😬"
 
 echo -e "\033[0;33m This next command will be a little slow 🐢\n In case of failure, you'll have to install VS manually 🥶 \033[0m"
@@ -94,7 +94,7 @@ brew install python-tk@3.9
 brew install --cask google-chrome; #sudo open -a "Google Chrome" 
 brew install --cask chromedriver
 brew install --cask mamp
-rm -rf ../../Applications/MAMP\ PRO.app
+rm -rf /Applications/MAMP\ PRO.app
 #sudo open -a mamp
 brew install --cask utm; #sudo open -a utm
 brew install --cask vlc; sudo open -a vlc
@@ -138,7 +138,6 @@ sudo rm -r /Users/enrico/Desktop && ln -s -n /Users/enrico/onedrive\ -\ unige.it
 
 echo "\033[0;34m Adding my scripts to the local user bin directory 🤓 \033[0m"
 sudo mkdir ../../usr/local/bin 
-cd
 sudo cp onedrive\ -\ unige.it/my_projects/copy-of-bin/* ../../usr/local/bin
 sudo chmod -R 777 ../../usr/local/bin/my-git-push
 
@@ -152,19 +151,21 @@ sudo mv onedrive\ -\ unige.it/ubuntu-arm.utm /Users/enrico/Library/Containers/co
 
 echo "\033[0;34m Finally I'll execute a bash script to check if it's all installed correctly 🥰 \033[0m"
 cd /Applications
+ls >> /Users/enrico/app-list.txt
 cd
-ls >> /Users/enrico/actual-app-list.txt
-actual=$(cat /Users/enrico/actual-app-list.txt)
-expected=$(cat "/Users/enrico/onedrive - unige.it/my_projects/automated_setup/expected-app-list.txt")
-status=$"cmp --silent -- "$actual" "$expected""
-if status; then
+actual=$(cat app-list.txt)
+expected=$(cat "automated-macos-setup/app-list.txt")
+status=$(cmp --silent -- "$actual" "$expected")
+
+if status==0; then
+    echo -e "\033[0;32m Nothing went wrong! 😄 \033[0m"
+    rm app-list.txt
+else
     echo -e "\033[1;31m Something went wrong...check which apps is not in actual-app-list.txt 🙁 \033[0m"
-    open /Desktop/my_projects/automated_setup/expected-app-list.txt
-    open /Applications/actual-app-list.txt
+    open automated-macos-setup/app-list.txt
+    open app-list.txt
     exit
 fi
-echo -e "\033[0;32m Nothing went wrong! 😄 \033[0m"
-rm /Users/enrico/actual-app-list.txt
 
 
 echo "\033[0;36m Now I will edit some dock's preferences 🌟 \033[0m"
