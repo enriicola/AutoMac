@@ -72,47 +72,47 @@ sudo open -a /Applications/Install\ Visual\ Studio\ for\ Mac.app
 # To instead install a .pkg, use this command:
 # sudo installer -package /path/to/package -target "/Volumes/Macintosh HD"
 hdiutil unmount /Volumes/Visual\ Studio\ for\ Mac\ Installer
-rm Downloads/visualstudioformacinstaller-*.dmg
+rm /Users/enrico/Downloads/visualstudioformacinstaller-*.dmg
 
 echo "\033[0;34m Installing Homebrew! 🍺 \033[0m"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "\033[0;34m Installing all the other apps i need (also I'll open them to setup some preferences) 💻🖥 \033[0m"
-brew install --cask onedrive; sudo open -a onedrive
-brew install --cask aldente; sudo open -a aldente
+brew install --cask onedrive; #sudo open -a onedrive
+brew install --cask aldente; #sudo open -a aldente
 brew install git
 git config --global user.email "enrico.pezzano@outlook.it"
 git config --global user.name "EnricoPezzano"
-brew install --cask microsoft-teams; sudo open -a "microsoft teams"
-brew install --cask whatsapp; sudo open -a whatsapp
-brew install --cask telegram; sudo open -a telegram
-brew install --cask adguard-vpn; sudo open -a "adguard vpn"
-brew install --cask iterm2; sudo open -a iterm2
-brew install --cask rectangle; sudo open -a rectangle
+brew install --cask microsoft-teams; #sudo open -a "microsoft teams"
+brew install --cask whatsapp; #sudo open -a whatsapp
+brew install --cask telegram; #sudo open -a telegram
+brew install --cask adguard-vpn; #sudo open -a "adguard vpn"
+brew install --cask iterm2; #sudo open -a iterm2
+brew install --cask rectangle; #sudo open -a rectangle
 brew install python #-tk@3.9
 brew install python-tk@3.9
-brew install --cask google-chrome; sudo open -a "Google Chrome" 
+brew install --cask google-chrome; #sudo open -a "Google Chrome" 
 brew install --cask chromedriver
 brew install --cask mamp
 rm -rf ../../Applications/MAMP\ PRO.app
-sudo open -a mamp
-brew install --cask utm; sudo open -a utm
-brew install --cask vlc
-brew install --cask firefox; sudo open -a firefox
-brew install --cask visual-studio-code; sudo open -a "visual studio code"
-brew install --cask 4k-video-downloader; sudo open -a "4k video downloader"
-brew install --cask discord; sudo open -a discord
-brew install --cask intellij-idea; sudo open -a "intellij idea"
-brew install --cask alt-tab; sudo open -a alttab
-brew install --cask cheatsheet; sudo open -a cheatsheet
-brew install --cask appcleaner; sudo open -a appcleaner
-brew install --cask lunar; sudo open -a lunar
+#sudo open -a mamp
+brew install --cask utm; #sudo open -a utm
+brew install --cask vlc; sudo open -a vlc
+brew install --cask firefox; #sudo open -a firefox
+brew install --cask visual-studio-code; #sudo open -a "visual studio code"
+brew install --cask 4k-video-downloader; #sudo open -a "4k video downloader"
+brew install --cask discord; #sudo open -a discord
+brew install --cask intellij-idea; #sudo open -a "intellij idea"
+brew install --cask alt-tab; #sudo open -a alttab
+brew install --cask cheatsheet; #sudo open -a cheatsheet
+brew install --cask appcleaner; #sudo open -a appcleaner
+brew install --cask lunar; #sudo open -a lunar
 brew install maven
-brew install --cask handbrake; sudo open -a handbrake
-brew install --cask eclipse-java; sudo open -a "eclipse java"
-brew install --cask spotify; sudo open -a spotify
-brew install --cask the-unarchiver; sudo open -a "the unarchiver"
-brew install --cask visual-studio; sudo open -a "visual studio"
+brew install --cask handbrake; #sudo open -a handbrake
+brew install --cask eclipse-java; #sudo open -a "eclipse java"
+brew install --cask spotify; #sudo open -a spotify
+brew install --cask the-unarchiver; #sudo open -a "the unarchiver"
+brew install --cask visual-studio; #sudo open -a "visual studio"
 brew install --cask oracle-jdk-javadoc
 brew upgrade # just to be sure :)
 
@@ -138,6 +138,7 @@ sudo rm -r /Users/enrico/Desktop && ln -s -n /Users/enrico/onedrive\ -\ unige.it
 
 echo "\033[0;34m Adding my scripts to the local user bin directory 🤓 \033[0m"
 sudo mkdir ../../usr/local/bin 
+cd
 sudo cp onedrive\ -\ unige.it/my_projects/copy-of-bin/* ../../usr/local/bin
 sudo chmod -R 777 ../../usr/local/bin/my-git-push
 
@@ -148,6 +149,22 @@ echo -e "\033[1;31m Wait for the UTM's virtual machine download from OneDrive to
 read -p "Press enter to continue 😬"
 sudo mv onedrive\ -\ unige.it/Windows-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
 sudo mv onedrive\ -\ unige.it/ubuntu-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
+
+echo "\033[0;34m Finally I'll execute a bash script to check if it's all installed correctly 🥰 \033[0m"
+cd /Applications
+cd
+ls >> /Users/enrico/actual-app-list.txt
+actual=$(cat /Users/enrico/actual-app-list.txt)
+expected=$(cat "/Users/enrico/onedrive - unige.it/my_projects/automated_setup/expected-app-list.txt")
+status=$"cmp --silent -- "$actual" "$expected""
+if status; then
+    echo -e "\033[1;31m Something went wrong...check which apps is not in actual-app-list.txt 🙁 \033[0m"
+    open /Desktop/my_projects/automated_setup/expected-app-list.txt
+    open /Applications/actual-app-list.txt
+    exit
+fi
+echo -e "\033[0;32m Nothing went wrong! 😄 \033[0m"
+rm /Users/enrico/actual-app-list.txt
 
 
 echo "\033[0;36m Now I will edit some dock's preferences 🌟 \033[0m"
@@ -163,23 +180,6 @@ defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Visual Studio.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 killall cfprefsd
 killall Dock
-
-
-echo "\033[0;34m At the end, I'll execute a bash script to check if it's all installed correctly 🥰 \033[0m"
-cd /Applications
-cd
-ls >> /Users/enrico/actual-app-list.txt
-actual=$(cat /Users/enrico/actual-app-list.txt)
-expected=$(cat "/Users/enrico/onedrive - unige.it/my_projects/automated_setup/expected-app-list.txt")
-status=$"cmp --silent -- "$actual" "$expected""
-if status; then
-    echo -e "\033[1;31m Something went wrong...check which apps is not in actual-app-list.txt 🙁 \033[0m"
-    open /Desktop/my_projects/automated_setup/expected-app-list.txt
-    open /Applications/actual-app-list.txt
-    exit
-fi
-echo -e "\033[0;32m Nothing went wrong! 😄 \033[0m"
-rm /Users/enrico/actual-app-list.txt
 
 
 # TODO trascrivi come commenti la disposizione delle app nel launchpad
