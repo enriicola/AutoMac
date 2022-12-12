@@ -2,6 +2,8 @@
 ##!/bin/sh
 # TODO testa my-automated-mac-setup copiando ed incollando un pezzo alla volta
 
+# https://youtube.com/watch?v=TlT7xjM01k8&feature=share
+
 echo "\033[0;36m Now I will edit some dock's preferences 🌟 \033[0m"
 defaults write com.apple.dock persistent-apps -array
 # TODO ordine app dock: safari mail foto calendario promemoria note appstore imovie monitoraggioattività enki etoro terminale teams discord mamp eclipse intellij vs vsc utm iterm2 +...
