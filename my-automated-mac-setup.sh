@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ##!/bin/sh
-
+cd ~
 echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m" 
 
 # TODO trascrivere a commento le descrizioni dello stato del mac dagli screen :)
@@ -62,7 +62,7 @@ echo -e "\033[1;31m Wait for the VS download to be done! 🛑 \033[0m"
 read -p "Press enter to continue 😬"
 
 echo -e "\033[0;33m This next command will be a little slow 🐢\n In case of failure, you'll have to install VS manually 🥶 \033[0m"
-hdiutil mount Downloads/visualstudioformacinstaller-*.dmg
+hdiutil mount /Users/enrico/Downloads/visualstudioformacinstaller-*.dmg
 # open -W  Downloads/visualstudioformacinstaller-*.dmg # less fun alternative
 sudo cp -R "/Volumes/Visual Studio for Mac Installer/Install Visual Studio for Mac.app" /Applications
 sudo codesign --force --deep --sign - /Applications/Install\ Visual\ Studio\ for\ Mac.app
@@ -114,7 +114,6 @@ brew install --cask spotify; sudo open -a spotify
 brew install --cask the-unarchiver; sudo open -a "the unarchiver"
 brew install --cask visual-studio; sudo open -a "visual studio"
 brew install --cask oracle-jdk-javadoc
-
 brew upgrade # just to be sure :)
 
 echo "\033[0;34m Hopefully the following apps are installed at this time...opening them to setup some preferences 🔩 \033[0m"
@@ -152,12 +151,11 @@ sudo mv onedrive\ -\ unige.it/ubuntu-arm.utm /Users/enrico/Library/Containers/co
 
 
 echo "\033[0;36m Now I will edit some dock's preferences 🌟 \033[0m"
-# TODO preferenze dock, quali app pinnare nella dock e mettere ordine nel launchpad
 defaults write com.apple.dock persistent-apps -array
-# ordine app dock: safari mail foto calendario promemoria note appstore imovie monitoraggioattività enki etoro terminale teams discord mamp eclipse intellij vs vsc utm iterm2 +...
-#                  ...adguardvpn handbrake vlc firefox spotify telegram whatsapp appcleaner onedrivetrash downloads
-
+# TODO ordine app dock: safari mail foto calendario promemoria note appstore imovie monitoraggioattività enki etoro terminale teams discord mamp eclipse intellij vs vsc utm iterm2 +...
+#                      ...adguardvpn handbrake vlc firefox spotify telegram whatsapp appcleaner onedrivetrash downloads
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Safari.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+
 # defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Foto.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 
     # queste funzionano
