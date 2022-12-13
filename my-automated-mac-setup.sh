@@ -48,6 +48,12 @@ echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m"
 # TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire... 
 
 
+echo "\033[0;34m Automatically quit printer app once the print jobs complete 🖨 \033[0m"
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+echo "\033[0;34m Showing icons for hard drives, servers, and removable media on the desktop ℹ️ \033[0m"
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true; killall Finder
+
 echo "\033[0;34m Setting to 0 the wait time for showing the dock ⏲ \033[0m"
 defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
 # undo: defaults write com.apple.dock autohide-delay -float 0.5; defaults write com.apple.dock autohide-time-modifier -int 0.5; killall Dock
@@ -130,6 +136,7 @@ brew install --cask the-unarchiver; sudo open -a "the unarchiver"
 brew install --cask visual-studio; sudo open -a "visual studio"
 brew install --cask oracle-jdk-javadoc
 brew upgrade # just to be sure :)
+brew cleanup
 
 echo "\033[0;34m Hopefully the following apps are installed at this time...opening them to setup some preferences 🔩 \033[0m"
 open -a enki
