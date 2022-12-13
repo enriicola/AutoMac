@@ -22,7 +22,7 @@ echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m"
 # TODO preferenzesys->trackpad->velocità=max, clic silenzioso=on
 # TODO preferenzesys->batteria->disattiva schermo=mai, disattiva dishi=on, oscura schermo=off, caricamento ottimizzato=off
 # TODO preferenzesys->batteria->alimentatore->disattiva schermo=mai, impedisci etc=on, attiva per accesso rete=on
-# TODO ordina preferenze da a a z
+# TODO ordina preferenze da A a Z
 
 # TODO mail preferences->togli caselle smart + aggiungi ai preferiti cestino(tutte), spam(tutte), archivio + ordinale 
 
