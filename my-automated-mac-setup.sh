@@ -14,7 +14,7 @@ defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.
 echo "\033[0;34m Disabling annoying disk warning when unmounting external devices 💾 \033[0m"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.DiskArbitration.diskarbitrationd.plist DADisableEjectNotification -bool YES && sudo pkill diskarbitrationd
 echo -e "\033[1;31m Must restart Mac to take effect 🔁 \033[0m"
-# 𝗥𝗲-𝗘𝗻𝗮𝗯𝗹𝗲 𝗔𝗻𝗻𝗼𝘆𝗶𝗻𝗴 𝗗𝗶𝘀𝗸 𝗪𝗮𝗿𝗻𝗶𝗻𝗴:
+# re-enable annoyng disk warning:
 # sudo defaults delete /Library/Preferences/SystemConfiguration/com.apple.DiskArbitration.diskarbitrationd.plist DADisableEjectNotification && sudo pkill diskarbitrationd
 
 echo "\033[0;34m Changing screenshot default to jpg (replace with png to undo) 📸 \033[0m"
