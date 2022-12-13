@@ -9,7 +9,7 @@ echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m"
 
 echo "\033[0;34m Setting to 0 the wait time for showing the dock ⏲ \033[0m"
 defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
-# undo: defaults write com.apple.dock autohide-delay -float 0.5; defaults write com.apple.dock autohide-time-modifier -int 0.5 ;killall Dock
+# undo: defaults write com.apple.dock autohide-delay -float 0.5; defaults write com.apple.dock autohide-time-modifier -int 0.5; killall Dock
 
 echo "\033[0;34m Disabling annoying disk warning when unmounting external devices 💾 \033[0m"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.DiskArbitration.diskarbitrationd.plist DADisableEjectNotification -bool YES && sudo pkill diskarbitrationd
