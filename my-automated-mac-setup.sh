@@ -136,7 +136,7 @@ sudo rm -r /Users/enrico/Desktop && ln -s -n /Users/enrico/onedrive\ -\ unige.it
 echo "\033[0;34m Adding my scripts to the local user bin directory 🤓 \033[0m"
 sudo mkdir ../../usr/local/bin 
 sudo cp onedrive\ -\ unige.it/my_projects/copy-of-bin/* ../../usr/local/bin
-sudo chmod -R 777 ../../usr/local/bin/my-git-push
+sudo chmod -R 777 ../../usr/local/bin/*
 
 echo "\033[0;34m At this point Visual Studio for mac should be installed, so I'll remove the installer app 😏 \033[0m"
 sudo rm -rf ../../Applications/Install\ Visual\ Studio\ for\ Mac.app
