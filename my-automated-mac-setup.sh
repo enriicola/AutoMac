@@ -4,7 +4,27 @@ cd ..
 echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m" 
 
 # TODO trascrivere a commento le descrizioni dello stato del mac dagli screen 
-# TODO installa vm di macos per screenare le impostazioni di default 
+# TODO preferenzesys->angoli attivi (basso-sx=nota rapida, basso-dx=mostra desktop)
+# TODO preferenzesys->dock e barra dei menù->ingrandimento on, dimensioni max, ingrandimento 50%, nascondi dock on(cmd+option+d), nascondi recenti
+# TODO preferenzesys->dock->centro controllo->schermo->mostra barra dei menu off
+# TODO preferenzesys->dock->centro controllo->suono->mostra barra dei menu off
+# TODO preferenzesys->dock->centro controllo->riproduzione->mostra barra dei menu off
+# TODO preferenzesys->dock->altrimoduli->accessibilità->* off
+# TODO preferenzesys->dock->altrimoduli->batteria->barra menù=on, centrocontrollo=off, percentuale=on
+# TODO preferenzesys->dock->altrimoduli->spotlight->off
+# TODO preferenzesys->dock->altrimoduli->siri->off
+# TODO preferenzesys->accountinternet->imposta icloud (on: foto, portachiavi, calendari, promemoria, note, safari, trova il mio mac, siri)
+# TODO preferenzesys->accountinternet->imposta unige.it (on: mail)
+# TODO preferenzesys->accountinternet->imposta outlook (on: mail, contatti)
+# TODO preferenzesys->estensioni->(on: dropover, onedrive, telegram)
+# TODO preferenzesys->estensioni->(on: dropover, onedrive, telegram)
+# TODO preferenzesys->tastiera->(on: regola luminosità, disattiva retroilluminazione dopo 5 minuti)
+# TODO preferenzesys->tastiera->abbreviazioni->azioni rapide->aggiungi workflow onedrive trash (cmd+ì)
+# TODO preferenzesys->trackpad->velocità=max, clic silenzioso=on
+# TODO preferenzesys->batteria->disattiva schermo=mai, disattiva dishi=on, oscura schermo=off, caricamento ottimizzato=off
+# TODO preferenzesys->batteria->alimentatore->disattiva schermo=mai, impedisci etc=on, attiva per accesso rete=on
+# TODO ordina preferenze da a a z
+
 # TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire... 
 
 echo "\033[0;34m Setting to 0 the wait time for showing the dock ⏲ \033[0m"
@@ -36,7 +56,6 @@ defaults write com.apple.Dock showhidden -bool TRUE && killall Dock
 # TODO via script modifica preferenze dock 
 # TODO via script modify system preferences
 # TODO via script modify menu bar
-# TODO via script modifica angoli attivi
 
 # TODO apri impostazioni sfondo scrivania
 # TODO imposta sfondo dinamico catalina
