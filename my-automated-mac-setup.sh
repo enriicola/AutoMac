@@ -3,7 +3,6 @@
 cd ..
 echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m" 
 
-# TODO trascrivere a commento le descrizioni dello stato del mac dagli screen 
 # TODO preferenzesys->angoli attivi (basso-sx=nota rapida, basso-dx=mostra desktop)
 # TODO preferenzesys->dock e barra dei menù->ingrandimento on, dimensioni max, ingrandimento 50%, nascondi dock on(cmd+option+d), nascondi recenti
 # TODO preferenzesys->dock->centro controllo->schermo->mostra barra dei menu off
@@ -25,7 +24,28 @@ echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m"
 # TODO preferenzesys->batteria->alimentatore->disattiva schermo=mai, impedisci etc=on, attiva per accesso rete=on
 # TODO ordina preferenze da a a z
 
+# TODO mail preferences->togli caselle smart + aggiungi ai preferiti cestino(tutte), spam(tutte), archivio + ordinale 
+
+# TODO remove all widget; aggiungi meteo(grande) e sotto eventiCalendario(grande)
+# TODO apri preferenze finder e modificale + modifica barra strumenti Finder + modifica barra laterale
+# TODO apri preferenze safari e modificale + modifica barra strumenti safari
+# TODO change profile picture for the mac/icloud
+# TODO try to uninstall some defualt apps
+
+# TODO apri impostazioni sfondo scrivania
+# TODO imposta sfondo dinamico catalina
+# TODO imposta sfondo secondario dinamico big sur
+# TODO calibra colori schermo secondario
+# TODO cambia foto profilo mac :)
+# TODO disattiva salvaschermo
+
+#osascript # TODO impostare sfondo catalina dinamico (+ sfondo secondario big sur dinamico)
+#tell application "Finder"
+#set desktop picture to POSIX file "/Library/Desktop Pictures/Solid Colors/Catalina.madesktop"
+#end tell
+
 # TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire... 
+
 
 echo "\033[0;34m Setting to 0 the wait time for showing the dock ⏲ \033[0m"
 defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
@@ -42,30 +62,6 @@ defaults write com.apple.screencapture type jpg
 
 echo "\033[0;34m Making hidden apps transparent 🫥 \033[0m"
 defaults write com.apple.Dock showhidden -bool TRUE && killall Dock
-
-
-#osascript # TODO impostare sfondo catalina dinamico (+ sfondo secondario big sur dinamico)
-#tell application "Finder"
-#set desktop picture to POSIX file "/Library/Desktop Pictures/Solid Colors/Catalina.madesktop"
-#end tell
-# TODO remove all widget; aggiungi meteo(grande) e sotto eventiCalendario(grande)
-# TODO via script modify barra strumenti Finder
-# TODO via script modify barra strumenti Safari
-# TODO via script change profile picture for the mac/icloud
-# TODO via script try to uninstall some defualt apps
-# TODO via script modifica preferenze dock 
-# TODO via script modify system preferences
-# TODO via script modify menu bar
-
-# TODO apri impostazioni sfondo scrivania
-# TODO imposta sfondo dinamico catalina
-# TODO imposta sfondo secondario dinamico big sur
-# TODO calibra colori schermo secondario
-# TODO apri preferenze safari e modificale
-# TODO apri preferenze finder e modificale
-# TODO cambia foto profilo mac :)
-# TODO disattiva salvaschermo
-
 
 echo "\033[0;34m Opening some link to apps you have to manually download (no brew script) 🛠 \033[0m"
 open https://apps.apple.com/us/app/accelerate-for-safari/id1459809092 
@@ -98,6 +94,7 @@ echo "\033[0;34m Installing Homebrew! 🍺 \033[0m"
 
 echo "\033[0;34m Installing all the other apps i need (also I'll open them to setup some preferences) 💻🖥 \033[0m"
 brew install --cask onedrive; sudo open -a onedrive
+# TODO "scarica subito tutti i file di onedrive"=on
 brew install --cask aldente; sudo open -a aldente
 brew install git
 git config --global user.email "enrico.pezzano@outlook.it"
