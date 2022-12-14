@@ -34,7 +34,6 @@ cd ..
 # TODO remove all widget; aggiungi meteo(grande) e sotto eventiCalendario(grande)
 # TODO apri preferenze finder e modificale + modifica barra strumenti Finder + modifica barra laterale
 # TODO apri preferenze safari e modificale + modifica barra strumenti safari
-# TODO change profile picture for the mac/icloud
 # TODO try to uninstall some defualt apps
 
 # TODO apri impostazioni sfondo scrivania
@@ -107,7 +106,6 @@ echo "\033[0;34m Installing all the other apps i need (also I'll open them to se
 brew install --cask onedrive; sudo open -a onedrive
 # TODO "scarica subito tutti i file di onedrive"=on
 brew install --cask aldente; sudo open -a aldente
-brew install git
 git config --global user.email "enrico.pezzano@outlook.it"
 git config --global user.name "EnricoPezzano"
 brew install --cask microsoft-teams; sudo open -a "microsoft teams"
@@ -227,6 +225,7 @@ read -p "Press enter to restart MacOs 🔁"
 sudo shutdown -r now
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Old script: 
+# brew install git
 # brew install --cask xampp
 # brew install --cask rider
 # brew install --cask atom
