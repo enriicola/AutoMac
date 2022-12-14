@@ -3,6 +3,9 @@
 cd ..
 echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m" 
 
+sh set-profile-pic.sh
+exit
+
 # TODO svuota automaticamente il cestino ogni 30 giorni
 # TODO preferenzesys->angoli attivi (basso-sx=nota rapida, basso-dx=mostra desktop)
 # TODO preferenzesys->dock e barra dei menù->ingrandimento on, dimensioni max, ingrandimento 50%, nascondi dock on(cmd+option+d), nascondi recenti
