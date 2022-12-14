@@ -1,9 +1,10 @@
+#!/usr/bin/env bash
+##!/bin/sh
+
 # Close any open System Preferences panes, to prevent them from overriding settings that are about to be changed
 osascript -e 'tell application "System Preferences" to quit'
 
 sudo sh set-profile-pic.sh
-
-sh set-preferences-before-apps.sh
 
 # TODO svuota automaticamente il cestino ogni 30 giorni
 # TODO preferenzesys->angoli attivi (basso-sx=nota rapida, basso-dx=mostra desktop)

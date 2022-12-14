@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 ##!/bin/sh
+
 sudo -v #preemptively asking root permissions :)
 echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m" 
 

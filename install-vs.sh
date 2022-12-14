@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+##!/bin/sh
+
 open https://aka.ms/vs/mac/download
 echo -e "\033[1;31m Wait for the Visual Studio download to be done! 🛑 \033[0m"
 read -p "Press enter to continue 😬"
