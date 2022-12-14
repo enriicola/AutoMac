@@ -6,8 +6,17 @@ osascript -e 'tell application "System Preferences" to quit'
 
 sudo sh set-profile-pic.sh
 
-echo "\033[0;34m Enabling “Remove items from the Trash after 30 days” 🗑 \033[0m"
-defaults write com.apple.finder FXRemoveOldTrashItems -bool true
+# TODO apri impostazioni sfondo scrivania
+# TODO imposta sfondo dinamico catalina
+# TODO imposta sfondo secondario dinamico big sur
+# TODO calibra colori schermo secondario
+# TODO disattiva salvaschermo
+
+#osascript # TODO impostare sfondo catalina dinamico (+ sfondo secondario big sur dinamico)
+#tell application "Finder"
+#set desktop picture to POSIX file "/Library/Desktop Pictures/Solid Colors/Catalina.madesktop"
+#end tell
+
 
 # TODO preferenzesys->angoli attivi (basso-sx=nota rapida, basso-dx=mostra desktop)
 # TODO preferenzesys->dock e barra dei menù->ingrandimento on, dimensioni max, ingrandimento 50%, nascondi dock on(cmd+option+d), nascondi recenti
@@ -37,20 +46,11 @@ defaults write com.apple.finder FXRemoveOldTrashItems -bool true
 # TODO apri preferenze safari e modificale + modifica barra strumenti safari
 
 
-# TODO apri impostazioni sfondo scrivania
-# TODO imposta sfondo dinamico catalina
-# TODO imposta sfondo secondario dinamico big sur
-# TODO calibra colori schermo secondario
-# TODO cambia foto profilo mac :)
-# TODO disattiva salvaschermo
-
-#osascript # TODO impostare sfondo catalina dinamico (+ sfondo secondario big sur dinamico)
-#tell application "Finder"
-#set desktop picture to POSIX file "/Library/Desktop Pictures/Solid Colors/Catalina.madesktop"
-#end tell
-
 # TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire... 
 
+
+echo "\033[0;34m Enabling “Remove items from the Trash after 30 days” 🗑 \033[0m"
+defaults write com.apple.finder FXRemoveOldTrashItems -bool true # set to false to disable
 
 echo "\033[0;34m Automatically quit printer app once the print jobs complete 🖨 \033[0m"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -59,8 +59,8 @@ echo "\033[0;34m Showing icons for hard drives, servers, and removable media on 
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true; killall Finder
 
 echo "\033[0;34m Setting to 0 the wait time for showing the dock ⏲ \033[0m"
-defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
-# undo: defaults write com.apple.dock autohide-delay -float 0.5; defaults write com.apple.dock autohide-time-modifier -int 0.5; killall Dock
+value=0 # undo: set value to 0.5
+defaults write com.apple.dock autohide-delay -float $value; defaults write com.apple.dock autohide-time-modifier -int $value; killall Dock
 
 echo "\033[0;34m Disabling annoying disk warning when unmounting external devices 💾 \033[0m"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.DiskArbitration.diskarbitrationd.plist DADisableEjectNotification -bool YES && sudo pkill diskarbitrationd
