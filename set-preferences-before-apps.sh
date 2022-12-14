@@ -6,7 +6,9 @@ osascript -e 'tell application "System Preferences" to quit'
 
 sudo sh set-profile-pic.sh
 
-# TODO svuota automaticamente il cestino ogni 30 giorni
+echo "\033[0;34m Enabling “Remove items from the Trash after 30 days” 🗑 \033[0m"
+defaults write com.apple.finder FXRemoveOldTrashItems -bool true
+
 # TODO preferenzesys->angoli attivi (basso-sx=nota rapida, basso-dx=mostra desktop)
 # TODO preferenzesys->dock e barra dei menù->ingrandimento on, dimensioni max, ingrandimento 50%, nascondi dock on(cmd+option+d), nascondi recenti
 # TODO preferenzesys->dock->centro controllo->schermo->mostra barra dei menu off
