@@ -2,7 +2,7 @@
 ##!/bin/sh
 
 sudo -v #preemptively asking root permissions :)
-echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m" 
+echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m" 
 
 # TODO try to uninstall some default apps
 
@@ -24,7 +24,8 @@ open https://apps.apple.com/it/app/dropover-easier-drag-drop/id1355679052?mt=12
 
 # sh automated-macos-setup/install-apps.sh######################################################
 
-echo "\033[0;34m Hopefully the following apps are installed at this time...opening them to setup some preferences 🔩 \033[0m"
+echo "\033[0;34m If all apps are installed by now...open them to setup some preferences 🔩 \033[0m"
+read -p "Press enter to continue 😬"
 open -a enki
 open -a accelerate
 open -a piper
@@ -43,7 +44,7 @@ rm -r movies && rm bin && rmdir applicazioni
 echo "\033[0;34m Syncing OneDrive on desktop... 🌥 \033[0m"
 rm -r /Users/enrico/Desktop && ln -s -n /Users/enrico/onedrive\ -\ unige.it /Users/enrico/Desktop
 
-echo "\033[0;34m Adding my scripts to the local user bin directory 🤓 \033[0m"
+echo "\033[0;34m Adding my executable scripts to the local user bin directory 🤓 \033[0m"
 mkdir ../../usr/local/bin 
 cp onedrive\ -\ unige.it/my_projects/copy-of-bin/* ../../usr/local/bin
 chmod -R 777 ../../usr/local/bin/*

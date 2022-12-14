@@ -6,17 +6,16 @@ osascript -e 'tell application "System Preferences" to quit'
 
 sudo sh set-profile-pic.sh
 
-# TODO apri impostazioni sfondo scrivania
 # TODO imposta sfondo dinamico catalina
 # TODO imposta sfondo secondario dinamico big sur
-# TODO calibra colori schermo secondario
-# TODO disattiva salvaschermo
 
 #osascript # TODO impostare sfondo catalina dinamico (+ sfondo secondario big sur dinamico)
 #tell application "Finder"
 #set desktop picture to POSIX file "/Library/Desktop Pictures/Solid Colors/Catalina.madesktop"
 #end tell
 
+# TODO calibra colori schermo secondario
+# TODO disattiva salvaschermo
 
 # TODO preferenzesys->angoli attivi (basso-sx=nota rapida, basso-dx=mostra desktop)
 # TODO preferenzesys->dock e barra dei menù->ingrandimento on, dimensioni max, ingrandimento 50%, nascondi dock on(cmd+option+d), nascondi recenti
