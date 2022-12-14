@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 ##!/bin/sh
 
+echo "\033[0;34m Setting profile picture 🤽 \033[0m"
+
 # create an array from all images in the User Pictures subfolders
 
 IFS=$'\n' read -rd '' -a pictures <<< "$(find '/Library/User Pictures/Fun' -name *.tif -print )"
@@ -22,4 +24,4 @@ for user in $userList; do
     picindex=0
   fi
 done
-echo "done"
+echo "\033[0;34m Done \033[0m"
