@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 ##!/bin/sh
-sudo -v #preemptily asking root permissions :)
+sudo -v #preemptively asking root permissions :)
 echo "\033[0;36m Welcome! 🦆 \n my-automated-mac-setup started! 🚀 \033[0m" 
+
+# Close any open System Preferences panes, to prevent them from overriding settings that are about to be changed
+osascript -e 'tell application "System Preferences" to quit'
 
 sudo sh set-profile-pic.sh
 
-cd ..
+# TODO sh set-preferences.sh
 
 # TODO svuota automaticamente il cestino ogni 30 giorni
 # TODO preferenzesys->angoli attivi (basso-sx=nota rapida, basso-dx=mostra desktop)
@@ -84,61 +87,10 @@ open https://apps.apple.com/it/app/pages/id409201541?mt=12
 open https://apps.apple.com/it/app/keynote/id409183694?mt=12
 open https://apps.apple.com/it/app/numbers/id409203825?mt=12
 open https://apps.apple.com/it/app/dropover-easier-drag-drop/id1355679052?mt=12
-open https://aka.ms/vs/mac/download
-echo -e "\033[1;31m Wait for the Visual Studio download to be done! 🛑 \033[0m"
-read -p "Press enter to continue 😬"
 
-echo -e "\033[0;33m This next command will be a little slow 🐢\n In case of failure, you'll have to install VS manually 🥶 \033[0m"
-sudo chmod -R 777 Downloads/visualstudioformacinstaller-*.dmg
-sudo hdiutil attach Downloads/visualstudioformacinstaller-*.dmg
-sudo cp -R "/Volumes/Visual Studio for Mac Installer/Install Visual Studio for Mac.app" /Applications
-sudo codesign --force --deep --sign - /Applications/Install\ Visual\ Studio\ for\ Mac.app
-sudo xattr -d -r com.apple.quarantine /Applications/Install\ Visual\ Studio\ for\ Mac.app 
-sudo chmod -R 755 /Applications/Install\ Visual\ Studio\ for\ Mac.app/Contents/MacOS/Install_Visual_Studio 
-sudo open -a /Applications/Install\ Visual\ Studio\ for\ Mac.app
-hdiutil unmount /Volumes/Visual\ Studio\ for\ Mac\ Installer
-rm /Users/enrico/Downloads/visualstudioformacinstaller-*.dmg
+sh install-vs.sh
 
-echo "\033[0;34m Installing Homebrew! 🍺 \033[0m"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-echo "\033[0;34m Installing all the other apps i need (also I'll open them to setup some preferences) 💻🖥 \033[0m"
-brew install --cask onedrive; sudo open -a onedrive
-# TODO "scarica subito tutti i file di onedrive"=on
-brew install --cask aldente; sudo open -a aldente
-git config --global user.email "enrico.pezzano@outlook.it"
-git config --global user.name "EnricoPezzano"
-brew install --cask microsoft-teams; sudo open -a "microsoft teams"
-brew install --cask whatsapp; sudo open -a whatsapp
-brew install --cask telegram; sudo open -a telegram
-brew install --cask adguard-vpn; sudo open -a "adguard vpn"
-brew install --cask iterm2; sudo open -a iterm2
-brew install --cask rectangle; sudo open -a rectangle
-brew install python #-tk@3.9
-brew install python-tk@3.9
-brew install --cask google-chrome; sudo open -a "Google Chrome" 
-brew install --cask chromedriver
-brew install --cask mamp; rm -rf /Applications/MAMP\ PRO.app; sudo open -a mamp
-brew install --cask utm; sudo open -a utm
-brew install --cask vlc; sudo open -a vlc
-brew install --cask firefox; sudo open -a firefox
-brew install --cask visual-studio-code; sudo open -a "visual studio code"
-brew install --cask 4k-video-downloader; sudo open -a "4k video downloader"
-brew install --cask discord; sudo open -a discord
-brew install --cask intellij-idea; sudo open -a "intellij idea"
-brew install --cask alt-tab; sudo open -a alttab
-brew install --cask cheatsheet; sudo open -a cheatsheet
-brew install --cask appcleaner; sudo open -a appcleaner
-brew install --cask lunar; sudo open -a lunar
-brew install maven
-brew install --cask handbrake; sudo open -a handbrake
-brew install --cask eclipse-java; sudo open -a "eclipse java"
-brew install --cask spotify; sudo open -a spotify
-brew install --cask the-unarchiver; sudo open -a "the unarchiver"
-brew install --cask visual-studio; sudo open -a "visual studio"
-brew install --cask oracle-jdk-javadoc
-brew upgrade # just to be sure :)
-brew cleanup
+# sh automated-macos-setup/install-apps.sh######################################################
 
 echo "\033[0;34m Hopefully the following apps are installed at this time...opening them to setup some preferences 🔩 \033[0m"
 open -a enki
@@ -153,24 +105,24 @@ open -a numbers
 open -a dropover
 
 echo "\033[0;34m The next script will rename all to lowercase...and remove directories i don't use 🔡 \033[0m"
-cd; for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done
+for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done
 rm -r movies && rm bin && rmdir applicazioni
 
 echo "\033[0;34m Syncing OneDrive on desktop... 🌥 \033[0m"
-sudo rm -r /Users/enrico/Desktop && ln -s -n /Users/enrico/onedrive\ -\ unige.it /Users/enrico/Desktop
+rm -r /Users/enrico/Desktop && ln -s -n /Users/enrico/onedrive\ -\ unige.it /Users/enrico/Desktop
 
 echo "\033[0;34m Adding my scripts to the local user bin directory 🤓 \033[0m"
-sudo mkdir ../../usr/local/bin 
-sudo cp onedrive\ -\ unige.it/my_projects/copy-of-bin/* ../../usr/local/bin
-sudo chmod -R 777 ../../usr/local/bin/*
+mkdir ../../usr/local/bin 
+cp onedrive\ -\ unige.it/my_projects/copy-of-bin/* ../../usr/local/bin
+chmod -R 777 ../../usr/local/bin/*
 
 echo "\033[0;34m At this point Visual Studio for mac should be installed, so I'll remove the installer app 😏 \033[0m"
-sudo rm -rf ../../Applications/Install\ Visual\ Studio\ for\ Mac.app
+rm -rf ../../Applications/Install\ Visual\ Studio\ for\ Mac.app
 
 echo -e "\033[1;31m Wait for the UTM's virtual machine download from OneDrive to be done! 🛑 \n Next I will move VMs to the right directory 📂 \033[0m"
 read -p "Press enter to continue 😬"
-sudo mv onedrive\ -\ unige.it/Windows-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
-sudo mv onedrive\ -\ unige.it/ubuntu-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
+mv onedrive\ -\ unige.it/Windows-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
+mv onedrive\ -\ unige.it/ubuntu-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
 
 echo "\033[0;34m Finally I'll execute a bash script to check if it's all installed correctly 🥰 \033[0m"
 cd /Applications
@@ -191,7 +143,7 @@ else
 fi
 
 
-echo "\033[0;36m Now I will edit some dock's preferences 🌟 \033[0m"
+echo "\033[0;34m Now I will edit some dock's preferences 🌟 \033[0m"
 defaults write com.apple.dock persistent-apps -array
 # TODO ordine app dock: safari mail foto calendario promemoria note appstore imovie monitoraggioattività enki etoro terminale teams discord mamp eclipse intellij vs vsc utm iterm2 +...
 #                      ...adguardvpn handbrake vlc firefox spotify telegram whatsapp appcleaner onedrivetrash downloads
@@ -222,7 +174,7 @@ killall Dock
 
 
 read -p "Press enter to restart MacOs 🔁"
-sudo shutdown -r now
+shutdown -r now
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Old script: 
 # brew install git

@@ -17,7 +17,8 @@ for user in $userList; do
   dscl . delete "/Users/$user" JPEGPhoto
   
   # update path in picture
-  dscl . create "/Users/$user" Picture "/Users/enrico/automated-macos-setup/wp.jpeg"
+  path=/Users/enrico/automated-macos-setup/wp.jpg
+  dscl . create "/Users/$user" Picture "$path"
   
   ((picindex++))
   if [[ $picindex -eq ${#pictures[@]} ]]; then
