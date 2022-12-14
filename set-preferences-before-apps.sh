@@ -45,6 +45,8 @@ sudo sh set-profile-pic.sh
 # TODO apri preferenze safari e modificale + modifica barra strumenti safari
 
 
+# TODO set to true installa aggiornamenti delle app di appstore
+
 # TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire... 
 
 
