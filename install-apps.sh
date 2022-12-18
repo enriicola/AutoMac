@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo "\033[0;34m Installing Homebrew! 🍺 \033[0m"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 

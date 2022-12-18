@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-##!/bin/sh
 
 # Close any open System Preferences panes, to prevent them from overriding settings that are about to be changed
 osascript -e 'tell application "System Preferences" to quit'

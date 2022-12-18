@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-##!/bin/sh
 
 echo "\033[0;34m Setting profile picture 🤽 \033[0m"
 
