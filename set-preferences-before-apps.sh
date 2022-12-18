@@ -9,14 +9,11 @@ sudo sh set-profile-pic.sh
 # TODO imposta sfondo dinamico catalina
 # TODO imposta sfondo secondario dinamico big sur
 
-osascript
-tell application "Finder"
-set desktop picture to POSIX file "/System/Library/Desktop Pictures/Catalina.madesktop"
-end tell
-
 # TODO calibra colori schermo secondario
 
 # TODO preferenzesys->set notifications to banners
+
+# TODO set meteo to "posizione attuale"
 
 # TODO preferenzesys->dock e barra dei menù->ingrandimento on, dimensioni max, ingrandimento 50%, nascondi dock on(cmd+option+d), nascondi recenti
 # TODO preferenzesys->dock->centro controllo->schermo->mostra barra dei menu off
@@ -51,6 +48,12 @@ end tell
 
 # TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire... 
 
+
+echo "\033[0;34m Showing path bar on finder... 🗺 \033[0m"
+defaults write com.apple.finder ShowPathbar -bool true
+
+echo "\033[0;34m Showing all file extensions... 🔩 \033[0m"
+defaults write -g AppleShowAllExtensions -bool true
 
 echo "\033[0;34m Disabling screensaver... 📺 \033[0m"
 defaults -currentHost write com.apple.screensaver idleTime 0
