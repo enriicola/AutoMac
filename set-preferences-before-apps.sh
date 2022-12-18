@@ -18,7 +18,6 @@ end tell
 
 # TODO preferenzesys->set notifications to banners
 
-# TODO preferenzesys->angoli attivi (basso-sx=nota rapida, basso-dx=mostra desktop)
 # TODO preferenzesys->dock e barra dei menù->ingrandimento on, dimensioni max, ingrandimento 50%, nascondi dock on(cmd+option+d), nascondi recenti
 # TODO preferenzesys->dock->centro controllo->schermo->mostra barra dei menu off
 # TODO preferenzesys->dock->centro controllo->suono->mostra barra dei menu off
@@ -37,6 +36,8 @@ end tell
 # TODO preferenzesys->trackpad->velocità=max, clic silenzioso=on
 # TODO preferenzesys->batteria->disattiva schermo=mai, disattiva dishi=on, oscura schermo=off, caricamento ottimizzato=off
 # TODO preferenzesys->batteria->alimentatore->disattiva schermo=mai, impedisci etc=on, attiva per accesso rete=on
+# TODO preferenzesys->privacy e sicurezza->imposta le localizzazioni su off (on solo trova il mio mac)
+# TODO preferenzesys->privacy e sicurezza->turn on "mostra l'icona della localizzazione quando i servizi di sistema richiedono la tua posizione"
 # TODO ordina preferenze da A a Z
 
 # TODO mail preferences->togli caselle smart + aggiungi ai preferiti cestino(tutte), spam(tutte), archivio + ordinale 
