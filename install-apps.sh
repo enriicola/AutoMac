@@ -13,8 +13,11 @@ brew install --cask telegram; sudo open -a telegram
 brew install --cask adguard-vpn; sudo open -a "adguard vpn"
 brew install --cask iterm2; sudo open -a iterm2
 brew install --cask rectangle; sudo open -a rectangle
+
 brew install python #-tk@3.9
 brew install python-tk@3.9
+sudo ln -s /usr/bin/python3 /usr/local/bin/python
+
 brew install --cask google-chrome; sudo open -a "Google Chrome" 
 brew install --cask chromedriver
 brew install --cask mamp; rm -rf /Applications/MAMP\ PRO.app; sudo open -a mamp
@@ -31,7 +34,6 @@ brew install --cask appcleaner; sudo open -a appcleaner
 brew install --cask lunar; sudo open -a lunar
 brew install maven
 brew install --cask handbrake; sudo open -a handbrake
-brew install --cask eclipse-java; sudo open -a "eclipse java"
 brew install --cask spotify; sudo open -a spotify
 brew install --cask the-unarchiver; sudo open -a "the unarchiver"
 brew install --cask visual-studio; sudo open -a "visual studio"

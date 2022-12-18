@@ -9,13 +9,14 @@ sudo sh set-profile-pic.sh
 # TODO imposta sfondo dinamico catalina
 # TODO imposta sfondo secondario dinamico big sur
 
-#osascript # TODO impostare sfondo catalina dinamico (+ sfondo secondario big sur dinamico)
-#tell application "Finder"
-#set desktop picture to POSIX file "/Library/Desktop Pictures/Solid Colors/Catalina.madesktop"
-#end tell
+osascript
+tell application "Finder"
+set desktop picture to POSIX file "/System/Library/Desktop Pictures/Catalina.madesktop"
+end tell
 
 # TODO calibra colori schermo secondario
-# TODO disattiva salvaschermo
+
+# TODO preferenzesys->set notifications to banners
 
 # TODO preferenzesys->angoli attivi (basso-sx=nota rapida, basso-dx=mostra desktop)
 # TODO preferenzesys->dock e barra dei menù->ingrandimento on, dimensioni max, ingrandimento 50%, nascondi dock on(cmd+option+d), nascondi recenti
@@ -49,6 +50,9 @@ sudo sh set-profile-pic.sh
 
 # TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire... 
 
+
+echo "\033[0;34m Disabling screensaver... 📺 \033[0m"
+defaults -currentHost write com.apple.screensaver idleTime 0
 
 echo "\033[0;34m Enabling “Remove items from the Trash after 30 days” 🗑 \033[0m"
 defaults write com.apple.finder FXRemoveOldTrashItems -bool true # set to false to disable
