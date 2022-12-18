@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # TODO testa my-automated-mac-setup copiando ed incollando un pezzo alla volta
 
@@ -8,4 +8,4 @@
 # defaults write com.apple.desktop Background '{default = {ImageFilePath = "/System/Library/Desktop Pictures/Catalina.madesktop";};}'
 
 # funziona, ma non è dynamic...
-osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/enrico/Downloads/pippo.jpg"'
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/enrico/Downloads/Catalina.heic"'

@@ -78,3 +78,13 @@ defaults write com.apple.screencapture type jpg
 
 echo "\033[0;34m Making hidden apps transparent 🫥 \033[0m"
 defaults write com.apple.Dock showhidden -bool TRUE && killall Dock
+
+
+echo "\033[0;34m Setting hot corners... 🔥📐 \033[0m"
+for corner in tl tr br bl; # Turn off hot-corners
+  do
+    defaults write com.apple.dock "wvous-$corner-corner" -int 0
+  done
+defaults write com.apple.dock "wvous-br-corner" -int 4  # mostra scrivania
+defaults write com.apple.dock "wvous-bl-corner" -int 14 # nota rapida
+killall Dock
