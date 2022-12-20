@@ -14,6 +14,7 @@ sudo sh set-profile-pic.sh
 
 # TODO set meteo to "posizione attuale"
 
+# TODO preferenzesys->siri->seleziona voce 1
 # TODO preferenzesys->dock e barra dei menù->ingrandimento on, dimensioni max, ingrandimento 50%, nascondi dock on(cmd+option+d), nascondi recenti
 # TODO preferenzesys->dock->centro controllo->schermo->mostra barra dei menu off
 # TODO preferenzesys->dock->centro controllo->suono->mostra barra dei menu off
@@ -32,8 +33,9 @@ sudo sh set-profile-pic.sh
 # TODO preferenzesys->trackpad->velocità=max, clic silenzioso=on
 # TODO preferenzesys->batteria->disattiva schermo=mai, disattiva dishi=on, oscura schermo=off, caricamento ottimizzato=off
 # TODO preferenzesys->batteria->alimentatore->disattiva schermo=mai, impedisci etc=on, attiva per accesso rete=on
-# TODO preferenzesys->privacy e sicurezza->imposta le localizzazioni su off (on solo trova il mio mac)
+# TODO preferenzesys->privacy e sicurezza->imposta le localizzazioni su off (on solo "trova il mio mac" e "personalizzazione fuso orario e sistema")
 # TODO preferenzesys->privacy e sicurezza->turn on "mostra l'icona della localizzazione quando i servizi di sistema richiedono la tua posizione"
+# TODO preferenzesys->schermi->setta night shitf to on e programmato da tramonto all'alba
 # TODO ordina preferenze da A a Z
 
 # TODO mail preferences->togli caselle smart + aggiungi ai preferiti cestino(tutte), spam(tutte), archivio + ordinale 
@@ -47,6 +49,10 @@ sudo sh set-profile-pic.sh
 
 # TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire... 
 
+
+# TODO "order by -something-" must be on first!!!!!
+echo "\033[0;34m Keeping folders on top... 🆙 \033[0m"
+defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool "true" && killall Finder
 
 echo "\033[0;34m Showing path bar on finder... 🗺 \033[0m"
 defaults write com.apple.finder ShowPathbar -bool true
