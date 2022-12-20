@@ -49,7 +49,7 @@ sudo sh set-profile-pic.sh
 
 # TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire... 
 
-
+# https://apple.stackexchange.com/questions/200691/set-finder-arranging-order-by-kind-via-terminal
 # TODO "order by -something-" must be on first!!!!!
 echo "\033[0;34m Keeping folders on top... 🆙 \033[0m"
 defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool "true" && killall Finder

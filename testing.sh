@@ -19,3 +19,4 @@
 
 # https://youtube.com/watch?v=TlT7xjM01k8&feature=share
 
+# https://apple.stackexchange.com/questions/200691/set-finder-arranging-order-by-kind-via-terminal
