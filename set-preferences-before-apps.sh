@@ -3,6 +3,13 @@
 # Close any open System Preferences panes, to prevent them from overriding settings that are about to be changed
 osascript -e 'tell application "System Preferences" to quit'
 
+# TODO setta tutte le preferenze di sistema finder, safari, etc con la registrazione di automator
+# +
+# TODO manda notifica che dica di eseguire quel workflow dall’interno a 10x
+# i.e.:
+# echo -e "\033[1;31m First thing first: sending alert to execute automator workflow (at 10x) while the script keep running \033[0m"
+# alert "launch the app $name from Automator at 10x velocity to set some preferences across sys, safari and finder"
+
 sudo sh set-profile-pic.sh
 
 # TODO imposta sfondo dinamico catalina
