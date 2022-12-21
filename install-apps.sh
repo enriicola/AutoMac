@@ -2,6 +2,7 @@
 
 echo "\033[0;34m Installing Homebrew! 🍺 \033[0m"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+read -p "Press enter to continue 😁"
 
 echo "\033[0;34m Installing all the other apps i need (also I'll open them to setup some preferences) 💻🖥 \033[0m"
 brew install --cask onedrive; sudo open -a onedrive

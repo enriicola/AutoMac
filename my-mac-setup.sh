@@ -56,7 +56,7 @@ read -p "Press enter to continue 😬"
 mv onedrive\ -\ unige.it/Windows-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
 mv onedrive\ -\ unige.it/ubuntu-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
 
-echo "\033[0;34m Finally I'll execute a bash script to check if it's all installed correctly 🥰 \033[0m"
+echo "\033[0;34m Finally I'll execute a script to check if it's all installed correctly 🥰 \033[0m"
 cd /Applications
 ls >> /Users/enrico/app-list.txt
 cd

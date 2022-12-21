@@ -22,7 +22,6 @@ sudo sh set-profile-pic.sh
 # TODO set meteo to "posizione attuale"
 
 # TODO preferenzesys->siri->seleziona voce 1
-# TODO preferenzesys->dock e barra dei menù->ingrandimento on, dimensioni max, ingrandimento 50%, nascondi dock on(cmd+option+d), nascondi recenti
 # TODO preferenzesys->dock->centro controllo->schermo->mostra barra dei menu off
 # TODO preferenzesys->dock->centro controllo->suono->mostra barra dei menu off
 # TODO preferenzesys->dock->centro controllo->riproduzione->mostra barra dei menu off
@@ -62,11 +61,6 @@ sudo sh set-profile-pic.sh
 echo "\033[0;34m Keeping folders on top... 🆙 \033[0m"
 defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool "true" && killall Finder
 
-echo "\033[0;34m Sizing dock's tiles and magnification... 🔎 \033[0m"
-defaults write com.apple.dock "tilesize" -int 40
-defaults write com.apple.dock largesize -int 60
-killall Dock
-
 echo "\033[0;34m Showing path bar on finder... 🗺 \033[0m"
 defaults write com.apple.finder ShowPathbar -bool true
 
@@ -86,8 +80,10 @@ echo "\033[0;34m Showing icons for hard drives, servers, and removable media on 
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true; killall Finder
 
 echo "\033[0;34m Setting to 0 the wait time for showing the dock ⏲ \033[0m"
+defaults write com.apple.dock autohide -bool true # enable autohide
 value=0 # undo: set value to 0.5
-defaults write com.apple.dock autohide-delay -float $value; defaults write com.apple.dock autohide-time-modifier -int $value; killall Dock
+defaults write com.apple.dock autohide-delay -float $value; # without animation
+defaults write com.apple.dock autohide-time-modifier -int $value; # with animation
 
 echo "\033[0;34m Disabling annoying disk warning when unmounting external devices 💾 \033[0m"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.DiskArbitration.diskarbitrationd.plist DADisableEjectNotification -bool YES && sudo pkill diskarbitrationd
@@ -99,7 +95,16 @@ echo "\033[0;34m Changing screenshot default to jpg (replace with png to undo) �
 defaults write com.apple.screencapture type jpg
 
 echo "\033[0;34m Making hidden apps transparent 🫥 \033[0m"
-defaults write com.apple.Dock showhidden -bool TRUE && killall Dock
+defaults write com.apple.Dock showhidden -bool TRUE
+
+echo "\033[0;34m Disabling recent apps in dock 📱 \033[0m"
+defaults write "/Users/$(whoami)/Library/Preferences/com.apple.dock.plist" show-recents -bool false
+
+echo "\033[0;34m Sizing dock's tiles and magnification... 🔎 \033[0m"
+defaults write com.apple.dock "tilesize" -int 40
+defaults write com.apple.dock largesize -int 60
+
+killall Dock
 
 
 echo "\033[0;34m Setting hot corners... 🔥📐 \033[0m"
