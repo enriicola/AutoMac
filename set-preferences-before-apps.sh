@@ -62,6 +62,11 @@ sudo sh set-profile-pic.sh
 echo "\033[0;34m Keeping folders on top... 🆙 \033[0m"
 defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool "true" && killall Finder
 
+echo "\033[0;34m Sizing dock's tiles and magnification... 🔎 \033[0m"
+defaults write com.apple.dock "tilesize" -int 40
+defaults write com.apple.dock largesize -int 60
+killall Dock
+
 echo "\033[0;34m Showing path bar on finder... 🗺 \033[0m"
 defaults write com.apple.finder ShowPathbar -bool true
 
