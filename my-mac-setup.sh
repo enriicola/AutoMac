@@ -74,7 +74,6 @@ else
     exit
 fi
 
-
 sh add-persistent-apps.sh
 
 
