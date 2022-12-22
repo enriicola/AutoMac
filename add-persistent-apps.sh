@@ -38,6 +38,7 @@ defaults write com.apple.dock persistent-apps -array-add "${Applications}Whatsap
 defaults write com.apple.dock persistent-apps -array-add "${Applications}AppCleaner.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}../Users/enrico/Desktop/onedrive-trash.app${end}"
 # defaults write com.apple.dock persistent-apps -array-add "${Applications}../Users/enrico/Downloads${end}"
+# download folder should be already there
 
 killall cfprefsd
 killall Dock

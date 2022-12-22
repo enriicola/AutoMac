@@ -43,3 +43,6 @@ brew install --cask visual-studio; sudo open -a "visual studio"
 brew install --cask oracle-jdk-javadoc
 brew upgrade # just to be sure :)
 brew cleanup
+
+echo "\033[0;34m Installing rust 🦀 \033[0m"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
