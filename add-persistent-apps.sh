@@ -25,6 +25,7 @@ defaults write com.apple.dock persistent-apps -array-add "${Applications}MAMP/MA
 defaults write com.apple.dock persistent-apps -array-add "${Applications}IntelliJ IDEA.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Visual Studio.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Visual Studio Code.app${end}"
+# defaults write com.apple.dock persistent-apps -array-add "${Applications}Docker.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}UTM.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}iTerm.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}AdGuard VPN.app${end}"
