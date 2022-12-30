@@ -50,6 +50,7 @@ sudo sh set-profile-pic.sh
 # TODO remove all widget; aggiungi meteo(grande) e sotto eventiCalendario(grande)
 # TODO apri preferenze finder e modificale + modifica barra strumenti Finder + modifica barra laterale
 # TODO apri preferenze safari e modificale + modifica barra strumenti safari
+# TODO apri preferenze itunes e modificale + mostra Sviluppo nella barra dei menu
 
 
 # TODO set to true installa aggiornamenti delle app di appstore

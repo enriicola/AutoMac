@@ -27,7 +27,6 @@ defaults write com.apple.dock persistent-apps -array-add "${Applications}Visual 
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Visual Studio Code.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}UTM.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}iTerm.app${end}"
-defaults write com.apple.dock persistent-apps -array-add "${Applications}Warp.app${end}" #
 defaults write com.apple.dock persistent-apps -array-add "${Applications}AdGuard VPN.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Handbrake.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}VLC.app${end}"

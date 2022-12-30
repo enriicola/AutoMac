@@ -21,6 +21,8 @@ open https://apps.apple.com/it/app/dropover-easier-drag-drop/id1355679052?mt=12
 
 # sh install-vs.sh
 
+# sh install-docker.sh
+
 # sh automated-macos-setup/install-apps.sh######################################################
 
 echo "\033[0;34m If all apps are installed by now...open them to setup some preferences 🔩 \033[0m"
@@ -106,6 +108,8 @@ shutdown -r now
 # brew install --cask xquartz
 # brew install exiftool
 # brew install --cask eclipse-java
+# brew install --cask warp; sudo open -a warp
+# defaults write com.apple.dock persistent-apps -array-add "${Applications}Warp.app${end}"
 
 # /usr/bin/automator ~/OneDrive\ -\ unige.it/scrivania/my_projects/automated_setup/OneDrive_aliasses_for_Desktop.workflow
 
