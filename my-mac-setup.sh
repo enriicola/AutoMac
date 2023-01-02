@@ -18,6 +18,7 @@ open https://apps.apple.com/it/app/pages/id409201541?mt=12
 open https://apps.apple.com/it/app/keynote/id409183694?mt=12
 open https://apps.apple.com/it/app/numbers/id409203825?mt=12
 open https://apps.apple.com/it/app/dropover-easier-drag-drop/id1355679052?mt=12
+open https://apps.apple.com/us/app/copyclip-clipboard-history/id595191960?mt=12
 
 # sh install-vs.sh
 
@@ -37,6 +38,7 @@ open -a pages
 open -a keynote
 open -a numbers
 open -a dropover
+open -a copyclip
 
 echo "\033[0;34m The next script will rename all to lowercase...and remove directories i don't use 🔡 \033[0m"
 for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done
