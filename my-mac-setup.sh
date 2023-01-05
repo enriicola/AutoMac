@@ -60,6 +60,8 @@ read -p "Press enter to continue 😬"
 mv onedrive\ -\ unige.it/Windows-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
 mv onedrive\ -\ unige.it/ubuntu-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
 
+sh add-tags.sh
+
 echo "\033[0;34m Finally I'll execute a script to check if it's all installed correctly 🥰 \033[0m"
 cd /Applications
 ls >> /Users/enrico/app-list.txt
@@ -84,16 +86,6 @@ sh add-persistent-apps.sh
 # TODO trascrivi come commenti la disposizione delle app nel launchpad
 # TODO disposizione launchpad: Altro(app che non uso etc), Produttività (pages etc), Estensioni safari(piper, aceelerate, adguard, nightshift), 
 #                              Utility(rectangle, dropover, alttab, aldente, the-unarchiver, cheatsheet, lunar), Strumenti dev(intellij, vs, vsc, developer, eclpipse) + altre app
-
-# TODO tagga come blu(unige) "cd; ../../usr/local/bin", "onedrive/unige", "onedrive/unige/pthread-barrier*" e "onedrive/img_7757.jpg"
-# TODO tagga come rosso "onedrive/appunti n.parodi", "od/auto-setup", "cd; ../../usr/local/bin", cartelle dei corsi correnti (cs, fis, ssgs, icdd, tap), "od/documenti/CV", ...
-                        #..."on/fis/davide.scarra", "od/doc/foto.danni", "od/doc/numbers", "hurt feeling report", "190kg deadlift", "da provare su tinder", "deadlift reel", ...
-                        #..."IMG 4458.PNG, IMG_4459.PNG, IMG_4710.PNG, IMG_4818.PNG, IMG_5816.PNG, IMG_8873.PNG, IMG_8874.PNG, IMG_8875.PNG, IMG_8910.PNG, IMG_8911.PNG, IMG_8912...
-                        #...IMG_8913.PNG, IMG_8914.PNG, IMG_8915.PNG, IMG_8916.PNG, IMG_8917.PNG, IMG_8918.PNG, IMG_8919.PNG, IMG_8921.PNG, IMG_8994.PNG", "just don't quit cbum"...
-                        #..."od/doc/incidente/preventivo danni", "gym/programmazione ntc", "gym/RPReplay_Final1650020006.MP4", "gym/RPReplay_Final1654850997.MP4", ...
-                        #..."scheda filippo d'🌲", "senza nome.pages"
-
-
 
 
 read -p "Press enter to restart MacOs 🔁"

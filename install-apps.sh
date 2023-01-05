@@ -16,6 +16,7 @@ brew install --cask telegram; sudo open -a telegram
 brew install --cask adguard-vpn; sudo open -a "adguard vpn"
 brew install --cask iterm2; sudo open -a iterm2
 brew install --cask rectangle; sudo open -a rectangle
+brew install tag
 
 brew install python #-tk@3.9
 brew install python-tk@3.9
