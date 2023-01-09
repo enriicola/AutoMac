@@ -83,7 +83,6 @@ fi
 sh add-persistent-apps.sh
 
 
-# TODO trascrivi come commenti la disposizione delle app nel launchpad
 # TODO disposizione launchpad: Altro(app che non uso etc), Produttività (pages etc), Estensioni safari(piper, aceelerate, adguard, nightshift), 
 #                              Utility(rectangle, dropover, alttab, aldente, the-unarchiver, cheatsheet, lunar), Strumenti dev(intellij, vs, vsc, developer, eclpipse) + altre app
 

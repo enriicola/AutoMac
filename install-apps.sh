@@ -42,6 +42,9 @@ brew install --cask spotify; sudo open -a spotify
 brew install --cask the-unarchiver; sudo open -a "the unarchiver"
 brew install --cask visual-studio; sudo open -a "visual studio"
 brew install --cask oracle-jdk-javadoc
+
+sh customize-terminal.sh
+
 brew upgrade # just to be sure :)
 brew cleanup
 
