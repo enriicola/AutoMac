@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
+echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m"
 sudo -v #preemptively asking root permissions :)
-echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m" 
+
+echo "\033[0;34m Setting sudo with touch id 👆 \033[0m"
+sudo cp sudo-settings /etc/pam.d/sudo
 
 # TODO try to uninstall some default apps
 
