@@ -1,1 +1,0 @@
-# sudo: auth account password session \n auth sufficient pam_tid.so \n auth sufficient pam_smartcard.so \n auth required pam_opendirectory.so \n account required pam_permit.so \n password required pam_deny.so \n session required pam_permit.so

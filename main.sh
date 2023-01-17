@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m"
+# TODO check if sudo -v works or not
 sudo -v #preemptively asking root permissions :)
 
-echo "\033[0;34m Setting sudo with touch id 👆 \033[0m"
-sudo cp sudo-settings /etc/pam.d/sudo
+sudo_settings=$'# sudo: auth account password session\\nauth       sufficient     pam_tid.so\\nauth       sufficient     pam_smartcard.so\\nauth       required       pam_opendirectory.so\\naccount    required       pam_permit.so\\npassword   required       pam_deny.so\\nsession    required       pam_permit.so'
+echo $sudo_settings > /etc/pam.d/sudo
 
 # TODO try to uninstall some default apps
 
