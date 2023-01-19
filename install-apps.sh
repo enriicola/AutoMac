@@ -42,6 +42,7 @@ brew install --cask spotify; sudo open -a spotify
 brew install --cask the-unarchiver; sudo open -a "the unarchiver"
 brew install --cask visual-studio; sudo open -a "visual studio"
 brew install --cask oracle-jdk-javadoc
+brew install blacktop/tap/lporg
 
 sh customize-terminal.sh
 
