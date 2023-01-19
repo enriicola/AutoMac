@@ -40,7 +40,7 @@ sudo sh set-profile-pic.sh
 # TODO preferenzesys->batteria->disattiva schermo=mai, disattiva dishi=on, oscura schermo=off, caricamento ottimizzato=off
 # TODO preferenzesys->batteria->alimentatore->disattiva schermo=mai, impedisci etc=on, attiva per accesso rete=on
 # TODO preferenzesys->privacy e sicurezza->imposta le localizzazioni su off (on solo "trova il mio mac" e "personalizzazione fuso orario e sistema")
-# TODO preferenzesys->privacy e sicurezza->turn on "mostra l'icona della localizzazione quando i servizi di sistema richiedono la tua posizione"
+# TODO preferenzesys->privacy e sicurezza->turn off "mostra l'icona della localizzazione quando i servizi di sistema richiedono la tua posizione"
 # TODO preferenzesys->schermi->setta night shitf to on e programmato da tramonto all'alba
 # TODO preferenzesys->privacy e sicurezza->setta blocca il mac a 1 minuto
 # TODO ordina preferenze da A a Z

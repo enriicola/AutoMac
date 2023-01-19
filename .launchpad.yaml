@@ -1,0 +1,121 @@
+apps:
+  pages:
+  - number: 1
+    items:
+    - folder: Altro
+      pages:
+      - number: 1
+        items:
+        - Comandi Rapidi
+        - QuickTime Player
+        - TextEdit
+        - Grapher
+        - Time Machine
+        - Libro Font
+        - Scacchi
+        - Memo
+        - Acquisizione Immagine
+        - Utility VoiceOver
+        - Utility AirPort
+        - Assistente Migrazione
+        - Terminale
+        - Monitoraggio Attività
+        - Console
+        - Accesso Portachiavi
+        - Informazioni di Sistema
+        - Automator
+        - Script Editor
+        - Utility Disco
+        - Colorimetro Digitale
+        - Utility ColorSync
+        - Screenshot
+        - Scambio File Bluetooth
+        - Configurazione MIDI Audio
+        - Podcast
+        - Casa
+        - Borsa
+        - Photo Booth
+        - Mission Control
+        - TV
+        - Anteprima
+        - Messaggi
+        - Libri
+        - Dizionario
+      - number: 2
+        items:
+        - FaceTime
+        - Contatti
+        - Siri
+        - Mappe
+        - Musica
+        - Memo Vocali
+        - Calcolatrice
+        - Preferenze di Sistema
+        - iMovie
+        - Foto
+        - App Store
+        - Safari
+        - Mail
+        - Calendario
+        - Promemoria
+        - Note
+    - folder: Produttività
+      pages:
+      - number: 1
+        items:
+        - Numbers
+        - Keynote
+        - Pages
+    - folder: estensioni safari
+      pages:
+      - number: 1
+        items:
+        - Nightshift
+        - Accelerate
+        - AdGuard for Safari
+        - PiPer
+    - folder: Utility
+      pages:
+      - number: 1
+        items:
+        - Rectangle
+        - Lunar
+        - CheatSheet
+        - AltTab
+        - AlDente
+        - Dropover
+        - CopyClip
+    - folder: Strumenti per sviluppatori
+      pages:
+      - number: 1
+        items:
+        - Visual Studio Code
+        - IntelliJ IDEA
+        - iTerm
+        - Visual Studio
+        - Docker
+        - Fig
+    - Dov'è
+    - Microsoft Teams
+    - WhatsApp
+    - Spotify
+    - Telegram
+    - AdGuard VPN
+    - Google Chrome
+    - MAMP
+    - UTM
+    - VLC
+    - Firefox
+    - Discord
+    - AppCleaner
+    - HandBrake
+    - Enki
+    - eToro
+    - The Unarchiver
+    - 4K Video Downloader
+    - OneDrive
+widgets:
+  pages: []
+dock_items:
+- ============
+desktop: {}

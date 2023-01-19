@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m"
-# TODO check if sudo -v works or not
-sudo -v #preemptively asking root permissions :)
+# sudo -v #preemptively asking root permissions :)
 
 sudo_settings=$'# sudo: auth account password session\\nauth       sufficient     pam_tid.so\\nauth       sufficient     pam_smartcard.so\\nauth       required       pam_opendirectory.so\\naccount    required       pam_permit.so\\npassword   required       pam_deny.so\\nsession    required       pam_permit.so'
 echo $sudo_settings > /etc/pam.d/sudo
@@ -28,7 +27,7 @@ open https://apps.apple.com/us/app/copyclip-clipboard-history/id595191960?mt=12
 
 # sh install-docker.sh
 
-# sh automated-macos-setup/install-apps.sh######################################################
+# sh install-apps.sh
 
 echo "\033[0;34m If all apps are installed by now...open them to setup some preferences 🔩 \033[0m"
 read -p "Press enter to continue 😬"
@@ -86,9 +85,9 @@ fi
 
 sh add-persistent-apps.sh
 
-
-# TODO disposizione launchpad: Altro(app che non uso etc), Produttività (pages etc), Estensioni safari(piper, aceelerate, adguard, nightshift), 
-#                              Utility(rectangle, dropover, alttab, aldente, the-unarchiver, cheatsheet, lunar), Strumenti dev(intellij, vs, vsc, developer, eclpipse) + altre app
+echo "\033[0;34m Organizing the launchpad 📱 \033[0m"
+cp .launchpad.yaml $HOME/.launchpad.yaml
+lporg load /Users/enrico/.launchpad.yaml
 
 
 read -p "Press enter to restart MacOs 🔁"
