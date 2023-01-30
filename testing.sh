@@ -8,3 +8,35 @@
 # i.e.:
 # echo -e "\033[1;31m First thing first: sending alert to execute automator workflow (at 10x) while the script keep running \033[0m"
 # alert "launch the app $name from Automator at 10x velocity to set some preferences across sys, safari and finder"
+
+# osascript -e 'display dialog "hello world"' 
+
+# echo prima
+# osascript -e 'display alert "hello world"' & 
+# echo dopo
+
+# osascript -e 'display notification "hello world!" with title "Title" subtitle "Subtitle"'
+
+# osascript -e 'tell application "Script Editor" to quit'
+
+# defaults write com.apple.notificationcenterui bannerTime 12 # default 5
+# # killall cfprefsd # bisogna fare logout e login per applicare modifiche :/
+# # killall NotificationCenter
+# osascript -e 'display notification "scarica subito tutti i file di onedrive"'
+
+
+# echo "tell application \"System Events\" to keystroke \"ù\" using {command down} " | osascript
+
+# https://github.com/jacobsalmela/tccutil
+
+sudo tccutil.py --list
+sudo tccutil --list
+sudo tccutil.py -i /usr/bin/osascript
+sudo tccutil -i /usr/bin/osascript
+sudo tccutil.py --enable com.apple.Terminal
+sudo tccutil --enable com.apple.Terminal
+
+
+sudo osascript -e 'tell application "System Events" 
+keystroke "ù" using {command down} 
+end tell'

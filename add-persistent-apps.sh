@@ -25,7 +25,7 @@ defaults write com.apple.dock persistent-apps -array-add "${Applications}MAMP/MA
 defaults write com.apple.dock persistent-apps -array-add "${Applications}IntelliJ IDEA.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Visual Studio.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Visual Studio Code.app${end}"
-# defaults write com.apple.dock persistent-apps -array-add "${Applications}Docker.app${end}"
+defaults write com.apple.dock persistent-apps -array-add "${Applications}Docker.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}UTM.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}iTerm.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}AdGuard VPN.app${end}"
@@ -40,6 +40,7 @@ defaults write com.apple.dock persistent-apps -array-add "${Applications}AppClea
 defaults write com.apple.dock persistent-apps -array-add "${Applications}../Users/enrico/Desktop/onedrive-trash.app${end}"
 # defaults write com.apple.dock persistent-apps -array-add "${Applications}../Users/enrico/Downloads${end}"
 # download folder should be already there
+echo "\033[0;34m The download folder should be already there :) \033[0m"
 
 killall cfprefsd
 killall Dock

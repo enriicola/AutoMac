@@ -2,7 +2,6 @@
 
 echo "\033[0;34m Installing Homebrew! 🍺 \033[0m"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-read -p "Press enter to continue 😁"
 
 echo "\033[0;34m Installing all the other apps i need (also I'll open them to setup some preferences) 💻🖥 \033[0m"
 brew install --cask onedrive; sudo open -a onedrive
@@ -17,6 +16,7 @@ brew install --cask adguard-vpn; sudo open -a "adguard vpn"
 brew install --cask iterm2; sudo open -a iterm2
 brew install --cask rectangle; sudo open -a rectangle
 brew install tag
+brew install tccutil # https://github.com/jacobsalmela/tccutil
 
 brew install python #-tk@3.9
 brew install python-tk@3.9
@@ -43,6 +43,8 @@ brew install --cask the-unarchiver; sudo open -a "the unarchiver"
 brew install --cask visual-studio; sudo open -a "visual studio"
 brew install --cask oracle-jdk-javadoc
 brew install blacktop/tap/lporg
+brew install docker
+brew install --cask docker; sudo open -a "Docker"
 
 sh customize-terminal.sh
 

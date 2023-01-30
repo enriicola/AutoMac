@@ -6,8 +6,6 @@ echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m
 sudo_settings=$'# sudo: auth account password session\\nauth       sufficient     pam_tid.so\\nauth       sufficient     pam_smartcard.so\\nauth       required       pam_opendirectory.so\\naccount    required       pam_permit.so\\npassword   required       pam_deny.so\\nsession    required       pam_permit.so'
 echo $sudo_settings > /etc/pam.d/sudo
 
-# TODO try to uninstall some default apps
-
 sh set-preferences-before-apps.sh
 
 echo "\033[0;34m Opening some link to apps you have to manually download (no brew script) 🛠 \033[0m"
@@ -135,3 +133,5 @@ shutdown -r now
     # file="/System/Library/Desktop Pictures/Catalina.madesktop"
     # defaults write com.apple.desktop Background '{default = {ImageFilePath = "/System/Library/Desktop Pictures/Catalina.madesktop";};}'
 # end
+
+# curl wttr.in/genova
