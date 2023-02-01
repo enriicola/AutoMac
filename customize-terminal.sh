@@ -11,7 +11,7 @@ brew install --cask fig; sudo open -a fig
 touch ~/.hushlogin
 
 filename='../.zshrc' # Define the filename
-newtext="\n\nPROMPT='⚡️%B%F{green}%n@%d ~ %%%f%b '"
+newtext="\n\nPROMPT='⚡️%B%F{green}%1~ %%%f%b '"
 
 echo $newtext >> $filename
 
