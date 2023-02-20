@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# https://apple.stackexchange.com/questions/200691/set-finder-arranging-order-by-kind-via-terminal
-
 # TODO setta tutte le preferenze di sistema finder, safari, etc con la registrazione di automator
 # +
 # TODO manda notifica che dica di eseguire quel workflow dall’interno a 10x
@@ -29,14 +27,19 @@
 
 # https://github.com/jacobsalmela/tccutil
 
-sudo tccutil.py --list
-sudo tccutil --list
-sudo tccutil.py -i /usr/bin/osascript
-sudo tccutil -i /usr/bin/osascript
-sudo tccutil.py --enable com.apple.Terminal
-sudo tccutil --enable com.apple.Terminal
+# sudo tccutil.py --list
+# sudo tccutil --list
+# sudo tccutil.py -i /usr/bin/osascript
+# sudo tccutil -i /usr/bin/osascript
+# sudo tccutil.py --enable com.apple.Terminal
+# sudo tccutil --enable com.apple.Terminal
 
 
-sudo osascript -e 'tell application "System Events" 
-keystroke "ù" using {command down} 
-end tell'
+# sudo osascript -e 'tell application "System Events" 
+# keystroke "ù" using {command down} 
+# end tell'
+
+# ------------------------------------------------------------------------------------------------------------
+
+
+killall Finder

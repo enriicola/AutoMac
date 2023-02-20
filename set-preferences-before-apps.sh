@@ -12,12 +12,17 @@ osascript -e 'tell application "System Preferences" to quit'
 
 sudo sh set-profile-pic.sh
 
-# TODO imposta sfondo dinamico catalina
-# TODO imposta sfondo secondario dinamico big sur
+echo "\033[0;34m Changing the wallpaper 🖼 \033[0m"
+brew install wallpaper
+read -p "First you have to download the wallpaper from system preferences, then press any key to continue..."
+# TODO osascript per scaricare wallpaper e (a sto punto) per impostarlo
+wallpaper set /Users/enrico/Library/Application\ Support/com.apple.mobileAssetDesktop/Catalina.heic
 
 # TODO calibra colori schermo secondario
 
 # TODO preferenzesys->set notifications to banners
+# defaults write com.apple.notificationcenterui bannerTime 2 # default 5
+
 
 # TODO set meteo to "posizione attuale"
 
@@ -58,28 +63,13 @@ sudo sh set-profile-pic.sh
 
 # TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire... 
 
-# https://apple.stackexchange.com/questions/200691/set-finder-arranging-order-by-kind-via-terminal
-# TODO "order by -something-" must be on first!!!!!
-echo "\033[0;34m Keeping folders on top... 🆙 \033[0m"
-defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool "true" && killall Finder
-
-echo "\033[0;34m Showing path bar on finder... 🗺 \033[0m"
-defaults write com.apple.finder ShowPathbar -bool true
-
-echo "\033[0;34m Showing all file extensions... 🔩 \033[0m"
-defaults write -g AppleShowAllExtensions -bool true
+sh set-finder-preferences.sh
 
 echo "\033[0;34m Disabling screensaver... 📺 \033[0m"
 defaults -currentHost write com.apple.screensaver idleTime 0
 
-echo "\033[0;34m Enabling “Remove items from the Trash after 30 days” 🗑 \033[0m"
-defaults write com.apple.finder FXRemoveOldTrashItems -bool true # set to false to disable
-
 echo "\033[0;34m Automatically quit printer app once the print jobs complete 🖨 \033[0m"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-echo "\033[0;34m Showing icons for hard drives, servers, and removable media on the desktop ℹ️ \033[0m"
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true; killall Finder
 
 echo "\033[0;34m Setting to 0 the wait time for showing the dock ⏲ \033[0m"
 defaults write com.apple.dock autohide -bool true # enable autohide
