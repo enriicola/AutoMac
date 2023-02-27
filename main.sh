@@ -21,11 +21,11 @@ open https://apps.apple.com/it/app/numbers/id409203825?mt=12
 open https://apps.apple.com/it/app/dropover-easier-drag-drop/id1355679052?mt=12
 open https://apps.apple.com/us/app/copyclip-clipboard-history/id595191960?mt=12
 
-# sh install-vs.sh
+sh install-vs.sh
 
-# sh install-docker.sh
+sh install-docker.sh
 
-# sh install-apps.sh
+sh install-apps.sh
 
 echo "\033[0;34m If all apps are installed by now...open them to setup some preferences 🔩 \033[0m"
 read -p "Press enter to continue 😬"

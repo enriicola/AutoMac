@@ -31,9 +31,17 @@ wallpaper set /Users/enrico/Library/Application\ Support/com.apple.mobileAssetDe
 # TODO preferenzesys->dock->centro controllo->suono->mostra barra dei menu off
 # TODO preferenzesys->dock->centro controllo->riproduzione->mostra barra dei menu off
 # TODO preferenzesys->dock->altrimoduli->accessibilità->* off
-# TODO preferenzesys->dock->altrimoduli->batteria->barra menù=on, centrocontrollo=off, percentuale=on
-# TODO preferenzesys->dock->altrimoduli->spotlight->off
-# TODO preferenzesys->dock->altrimoduli->siri->off
+# TODO preferenzesys->dock->altrimoduli->batteria->barra menù=on, centrocontrollo=off, 
+
+echo "\033[0;34m Showing battering percentage 🔋 \033[0m"
+defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
+echo "\033[0;34m Hiding Siri 🗣 \033[0m"
+defaults write com.apple.Siri StatusMenuVisible -bool false
+killall -KILL SystemUIServer
+
+echo "\033[0;34m Hiding spotlight 🔍 \033[0m"
+defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1 #0 to show
+
 # TODO preferenzesys->accountinternet->imposta icloud (on: foto, portachiavi, calendari, promemoria, note, safari, trova il mio mac, siri)
 # TODO preferenzesys->accountinternet->imposta unige.it (on: mail)
 # TODO preferenzesys->accountinternet->imposta outlook (on: mail, contatti)

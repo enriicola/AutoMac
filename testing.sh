@@ -42,4 +42,25 @@
 # ------------------------------------------------------------------------------------------------------------
 
 
-killall Finder
+
+
+
+
+
+
+
+
+
+
+
+
+# CHEATSHEET:
+# killall -KILL NotificationCenter
+# killall -KILL SystemUIServer #menubar
+# killall -KILL Dock
+# killall -KILL Finder
+# killall Spotlight
+
+# defaults read com.apple.Siri
+
+# /Library/Preferences/ByHost/com.apple.controlcenter.$hostId
