@@ -30,9 +30,10 @@ wallpaper set /Users/enrico/Library/Application\ Support/com.apple.mobileAssetDe
 # TODO preferenzesys->dock->centro controllo->schermo->mostra barra dei menu off
 # TODO preferenzesys->dock->centro controllo->suono->mostra barra dei menu off
 # TODO preferenzesys->dock->centro controllo->riproduzione->mostra barra dei menu off
-# TODO preferenzesys->dock->altrimoduli->accessibilità->* off
-# TODO preferenzesys->dock->altrimoduli->batteria->barra menù=on, centrocontrollo=off, 
 
+# TODO preferenzesys->dock->altrimoduli->batteria->barra menù=on
+# TODO preferenzesys->batteria->disattiva schermo dopo=mai, oscura schermo=off, caricamento ottimizzato=off (prova a lasciare on), disattiva dishi=on, , 
+# TODO preferenzesys->batteria->alimentatore->disattiva schermo=mai #(dovrebbero già essere così) impedisci etc=on, attiva per accesso rete=on
 echo "\033[0;34m Showing battering percentage 🔋 \033[0m"
 defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
 echo "\033[0;34m Hiding Siri 🗣 \033[0m"
@@ -46,12 +47,9 @@ defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1 #0 to show
 # TODO preferenzesys->accountinternet->imposta unige.it (on: mail)
 # TODO preferenzesys->accountinternet->imposta outlook (on: mail, contatti)
 # TODO preferenzesys->estensioni->(on: dropover, onedrive, telegram)
-# TODO preferenzesys->estensioni->(on: dropover, onedrive, telegram)
 # TODO preferenzesys->tastiera->(on: regola luminosità, disattiva retroilluminazione dopo 5 minuti)
 # TODO preferenzesys->tastiera->abbreviazioni->azioni rapide->aggiungi workflow onedrive trash (cmd+ì)
 # TODO preferenzesys->trackpad->velocità=max, clic silenzioso=on
-# TODO preferenzesys->batteria->disattiva schermo=mai, disattiva dishi=on, oscura schermo=off, caricamento ottimizzato=off
-# TODO preferenzesys->batteria->alimentatore->disattiva schermo=mai, impedisci etc=on, attiva per accesso rete=on
 # TODO preferenzesys->privacy e sicurezza->imposta le localizzazioni su off (on solo "trova il mio mac" e "personalizzazione fuso orario e sistema")
 # TODO preferenzesys->privacy e sicurezza->accessibilità->terminale=on
 # TODO preferenzesys->privacy e sicurezza->turn off "mostra l'icona della localizzazione quando i servizi di sistema richiedono la tua posizione"
@@ -62,8 +60,9 @@ defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1 #0 to show
 # TODO mail preferences->togli caselle smart + aggiungi ai preferiti cestino(tutte), spam(tutte), archivio + ordinale 
 
 # TODO remove all widget; aggiungi meteo(grande) e sotto eventiCalendario(grande)
-# TODO apri preferenze finder e modificale + modifica barra strumenti Finder + modifica barra laterale
+# TODO apri finder + modifica barra strumenti Finder + modifica barra laterale
 # TODO apri preferenze safari e modificale + modifica barra strumenti safari
+# TODO safari->preferenze->notifiche->mostra notifiche=off
 # TODO apri preferenze itunes e modificale + mostra Sviluppo nella barra dei menu
 
 

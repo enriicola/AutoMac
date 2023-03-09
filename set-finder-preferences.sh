@@ -13,6 +13,8 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false # No warning before
 
 defaults write com.apple.finder ShowRecentTags -bool true #Show recent tags
 
+defaults write com.apple.finder NewWindowTarget -string "PfDe" #set desktop as new window default 
+
 echo "\033[0;34m Use current directory as default search scope in Finder \033[0m"
 defaults write com.apple.finder FXDefaultSearchScope -string “SCcf”
 
