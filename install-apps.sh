@@ -6,6 +6,8 @@ echo "\033[0;34m Installing Homebrew! 🍺 \033[0m"
 echo "\033[0;34m Installing all the other apps i need (also I'll open them to setup some preferences) 💻🖥 \033[0m"
 brew install --cask onedrive; sudo open -a onedrive
 # TODO "scarica subito tutti i file di onedrive"=on
+osascript -e 'display notification "Manual settings: setta onedrive per scaricare subito tutti i file"'
+
 brew install --cask aldente; sudo open -a aldente
 git config --global user.email "enrico.pezzano@outlook.it"
 git config --global user.name "EnricoPezzano"

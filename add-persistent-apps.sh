@@ -36,6 +36,7 @@ defaults write com.apple.dock persistent-apps -array-add "${Applications}Google 
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Spotify.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Telegram.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Whatsapp.app${end}"
+defaults write com.apple.dock persistent-apps -array-add "${Applications}4K Video Downloader.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}AppCleaner.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}../Users/enrico/Desktop/onedrive-trash.app${end}"
 # defaults write com.apple.dock persistent-apps -array-add "${Applications}../Users/enrico/Downloads${end}"

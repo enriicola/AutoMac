@@ -23,7 +23,7 @@ open https://apps.apple.com/us/app/copyclip-clipboard-history/id595191960?mt=12
 
 sh install-vs.sh
 
-sh install-docker.sh
+# sh install-docker.sh
 
 sh install-apps.sh
 
