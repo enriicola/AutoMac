@@ -20,6 +20,7 @@ osascript -e 'display notification "Manual settings: imposta sfondo desktop"'
 wallpaper set /Users/enrico/Library/Application\ Support/com.apple.mobileAssetDesktop/Catalina.heic
 
 # TODO calibra colori schermo secondario
+sh testing.sh "calibra colori schermo secondario" 1/1/2023 10:00:00PM
 osascript -e 'display notification "Manual settings: calibra colori schermo secondario"'
 
 # TODO preferenzesys->set notifications to banners
@@ -155,7 +156,6 @@ defaults write com.apple.dock "tilesize" -int 40
 defaults write com.apple.dock largesize -int 60
 
 killall Dock
-
 
 echo "\033[0;34m Setting hot corners... 🔥📐 \033[0m"
 for corner in tl tr br bl; # Turn off hot-corners
