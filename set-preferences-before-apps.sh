@@ -4,7 +4,7 @@
 osascript -e 'tell application "System Preferences" to quit'
 
 # TODO setta tutte le preferenze di sistema finder, safari, etc con la registrazione di automator
-# +
+# TODO finder->preferenze->avanzate->quando eseeguo una ricerca=cerca nella cartella attuale
 # TODO manda notifica che dica di eseguire quel workflow dall’interno a 10x
 # i.e.:
 # echo -e "\033[1;31m First thing first: sending alert to execute automator workflow (at 10x) while the script keep running \033[0m"
@@ -34,7 +34,7 @@ osascript -e 'display notification "Manual settings: set meteo to posizione attu
 # TODO preferenzesys->siri->seleziona voce 1
 osascript -e 'display notification "Manual settings: set siri voice to 1"'
 
-# TODO preferenzesys->dock->centro controllo->schermo->mostra barra dei menu off
+# TODO preferenzesys->dock->centro controllo->schermo->mostra barra dei menu off #volendo posso lasciarlo on, tanto non si vede
 osascript -e 'display notification "Manual settings: set control center to hide menu bar"'
 
 # TODO preferenzesys->dock->centro controllo->suono->mostra barra dei menu off
@@ -116,7 +116,7 @@ osascript -e 'display notification "Manual settings: set safari preferences to n
 # TODO apri preferenze itunes e modificale + mostra Sviluppo nella barra dei menu
 osascript -e 'display notification "Manual settings: open itunes preferences and modify toolbar"'
 
-# TODO set to true installa aggiornamenti delle app di appstore
+# TODO set to true installa aggiornamenti delle app di appstore #forse posso evitare questo comando
 osascript -e 'display notification "Manual settings: set appstore preferences to install updates"'
 
 # TODO in alternativa prova a registrare le tue azioni tramite automator e salvarle in un app da eseguire...

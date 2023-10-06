@@ -8,19 +8,6 @@ echo $sudo_settings > /etc/pam.d/sudo
 
 sh set-preferences-before-apps.sh
 
-echo "\033[0;34m Opening some link to apps you have to manually download (no brew script) 🛠 \033[0m"
-open https://apps.apple.com/us/app/accelerate-for-safari/id1459809092 
-open https://apps.apple.com/it/app/piper/id1421915518?mt=12
-open https://apps.apple.com/it/app/enki-learn-coding-programming/id993753145
-open https://apps.apple.com/il/app/etoro-trade-stocks-crypto/id674984916
-open https://apps.apple.com/it/app/nightshift-dark-mode/id1561604170?mt=12
-open https://apps.apple.com/it/app/adguard-per-safari/id1440147259?mt=12
-open https://apps.apple.com/it/app/pages/id409201541?mt=12
-open https://apps.apple.com/it/app/keynote/id409183694?mt=12
-open https://apps.apple.com/it/app/numbers/id409203825?mt=12
-open https://apps.apple.com/it/app/dropover-easier-drag-drop/id1355679052?mt=12
-open https://apps.apple.com/us/app/copyclip-clipboard-history/id595191960?mt=12
-
 sh install-vs.sh
 
 # sh install-docker.sh
@@ -94,11 +81,9 @@ shutdown -r now
 # Old script: 
 # brew install git
 # brew install --cask xampp
-# brew install --cask rider
 # brew install --cask atom
 # brew install --cask pgadmin4
 # brew install --cask github
-# brew install --cask visual-paradigm-ce
 # brew install --cask xquartz
 # brew install exiftool
 # brew install --cask eclipse-java
