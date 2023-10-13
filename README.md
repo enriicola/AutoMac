@@ -1,4 +1,4 @@
-# automated-macos-setup
+# autoMac_Setup
 
 ## Hello there!
 
