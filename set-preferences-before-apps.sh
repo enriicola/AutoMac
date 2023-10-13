@@ -34,6 +34,9 @@ osascript -e 'display notification "Manual settings: set meteo to posizione attu
 # TODO preferenzesys->siri->seleziona voce 1
 osascript -e 'display notification "Manual settings: set siri voice to 1"'
 
+# TODO enable type to siri in accessibility preferences
+osascript -e 'display notification "Manual settings: enable type to siri in accessibility preferences"'
+
 # TODO preferenzesys->dock->centro controllo->schermo->mostra barra dei menu off #volendo posso lasciarlo on, tanto non si vede
 osascript -e 'display notification "Manual settings: set control center to hide menu bar"'
 

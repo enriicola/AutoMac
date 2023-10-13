@@ -16,3 +16,11 @@ newtext="\n\nPROMPT='⚡️%B%F{green}%1~ %%%f%b '"
 echo $newtext >> $filename
 
 exec zsh
+
+
+brew install starship
+newtext="\n\n# Starship prompt\n# eval \"\$(starship init zsh)\""
+echo $newtext >> $filename
+mkdir -p ~/.config && touch ~/.config/starship.toml
+starship preset plain-text-symbols -o ~/.config/starship.toml
+clear
