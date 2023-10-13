@@ -45,14 +45,14 @@ rm -rf ../../Applications/Install\ Visual\ Studio\ for\ Mac.app
 
 echo -e "\033[1;31m Wait for the UTM's virtual machine download from OneDrive to be done! 🛑 \n Next I will move VMs to the right directory 📂 \033[0m"
 read -p "Press enter to continue 😬"
-mv onedrive\ -\ unige.it/Windows-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
-mv onedrive\ -\ unige.it/ubuntu-arm.utm /Users/enrico/Library/Containers/com.utmapp.UTM/Data/Documents
+mv onedrive\ -\ unige.it/Windows-arm.utm /Users/$LOGNAME/Library/Containers/com.utmapp.UTM/Data/Documents
+mv onedrive\ -\ unige.it/ubuntu-arm.utm /Users/$LOGNAME/Library/Containers/com.utmapp.UTM/Data/Documents
 
 sh add-tags.sh
 
 echo "\033[0;34m Finally I'll execute a script to check if it's all installed correctly 🥰 \033[0m"
 cd /Applications
-ls >> /Users/enrico/app-list.txt
+ls >> /Users/$LOGNAME/app-list.txt
 cd
 actual=$(cat app-list.txt)
 expected=$(cat "automated-macos-setup/app-list.txt")

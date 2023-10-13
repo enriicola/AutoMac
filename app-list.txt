@@ -6,10 +6,12 @@ AlDente.app
 AltTab.app
 AppCleaner.app
 CheatSheet.app
+CopyClip.app
 Discord.app
+Docker.app
 Dropover.app
-Eclipse Java.app
 Enki.app
+Fig.app
 Firefox.app
 Google Chrome.app
 HandBrake.app
@@ -24,6 +26,7 @@ OneDrive.app
 Pages.app
 PiPer.app
 Rectangle.app
+Rider.app
 Safari.app
 Spotify.app
 Telegram.app
@@ -31,9 +34,12 @@ The Unarchiver.app
 UTM.app
 Utilities
 VLC.app
+VMware Fusion.app
+Visual Paradigm.app
 Visual Studio Code.app
-Visual Studio.app
 WhatsApp.app
 eToro.app
 iMovie.app
+iMyTrans.app
 iTerm.app
+virtualOS.app
