@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-#TODO initial choice if I want to save this setup or if I want to autoMac_Setup :)
+#TODO initial choice if I want to save this setup or if I want to autoMac_Setup (smt like a homebrew app -> brew install autoMac, autoMac init my-config-file, autMac save filename)
+# https://www.youtube.com/watch?v=fbyrLo6yx8M
 
 echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m"
 # sudo -v #preemptively asking root permissions :)
