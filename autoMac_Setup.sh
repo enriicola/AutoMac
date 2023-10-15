@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#TODO initial choice if I want to save this setup or if I want to autoMac_Setup :)
+
 echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m"
 # sudo -v #preemptively asking root permissions :)
 
