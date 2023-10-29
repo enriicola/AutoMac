@@ -1,0 +1,36 @@
+{
+  "diffEditor.renderSideBySide": false,
+  "editor.accessibilitySupport": "off",
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "explorer.confirmDelete": false,
+  "files.exclude": {
+    "**/.git": false
+  },
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "security.workspace.trust.banner": "always",
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.untrustedFiles": "open",
+  "todo-tree.filtering.includeHiddenFiles": true,
+  "workbench.colorTheme": "Default Dark+",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "workbench.editorAssociations": {
+    "*.plist": "default"
+  },
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairsHorizontal": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "files.autoSave": "afterDelay",
+  "editor.inlineSuggest.showToolbar": "always",
+  "terminal.integrated.fontFamily": "MesloLGL Nerd Font",
+  "editor.fontSize": 11
+}

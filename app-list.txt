@@ -1,7 +1,7 @@
 4K Video Downloader.app
 Accelerate.app
 AdGuard VPN.app
-AdGuard for Safari.app
+AdGuard.app
 AlDente.app
 AltTab.app
 AppCleaner.app

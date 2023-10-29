@@ -24,7 +24,6 @@ open -a accelerate
 open -a piper
 open -a etoro
 open -a nigthshift
-open -a "adguard for safari"
 open -a pages
 open -a keynote
 open -a numbers
@@ -52,6 +51,9 @@ mv onedrive\ -\ unige.it/Windows-arm.utm /Users/$LOGNAME/Library/Containers/com.
 mv onedrive\ -\ unige.it/ubuntu-arm.utm /Users/$LOGNAME/Library/Containers/com.utmapp.UTM/Data/Documents
 
 sh add-tags.sh
+
+echo "\033[0;34m Cleainig up some stuff... 🧹 \033[0m"
+brew cleanup #remove old versions of installed apps
 
 echo "\033[0;34m Finally I'll execute a script to check if it's all installed correctly 🥰 \033[0m"
 cd /Applications

@@ -72,8 +72,10 @@ apps:
         items:
         - Nightshift
         - Accelerate
-        - AdGuard for Safari
         - PiPer
+        - Hush
+        - Ghostery\ –\ Privacy\ Ad\ Blocker
+        - AdGuard
     - folder: Utility
       pages:
       - number: 1
@@ -85,22 +87,24 @@ apps:
         - AlDente
         - Dropover
         - CopyClip
+        - Cookie
     - folder: Strumenti per sviluppatori
       pages:
       - number: 1
         items:
         - Visual Studio Code
         - IntelliJ IDEA
+        - Rider
         - iTerm
-        - Visual Studio
         - Docker
         - Fig
+        - Visual Paradigm
     - Dov'è
     - Microsoft Teams
     - WhatsApp
     - Spotify
     - Telegram
-    - AdGuard VPN
+    - AdGuard
     - Google Chrome
     - MAMP
     - UTM
