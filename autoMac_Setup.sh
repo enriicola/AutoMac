@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
 
+# TODO: change every shebang to zsh
 #TODO initial choice if I want to save this setup or if I want to autoMac_Setup (smt like a homebrew app -> brew install autoMac, autoMac init my-config-file, autMac save filename)
 # https://www.youtube.com/watch?v=fbyrLo6yx8M
 
 echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m"
 # sudo -v #preemptively asking root permissions :)
 
+# TODO write a script that copies all file to another folder for icloud backup every 15/20 minutes
+# https://unix.stackexchange.com/questions/119069/cron-vs-sleep-which-is-the-better-one-in-terms-of-efficient-cpu-memory-utiliz
+# https://www.youtube.com/watch?v=H8Z5AgU7zWQ
+# https://apple.stackexchange.com/questions/450495/how-do-i-schedule-a-job-to-run-every-15-minutes-on-mac-os-big-sur
+
+
+echo "\033[0;34m Setting up touch id for sudo 🖐 \033[0m"
 sudo_settings=$'# sudo: auth account password session\\nauth       sufficient     pam_tid.so\\nauth       sufficient     pam_smartcard.so\\nauth       required       pam_opendirectory.so\\naccount    required       pam_permit.so\\npassword   required       pam_deny.so\\nsession    required       pam_permit.so'
 echo $sudo_settings > /etc/pam.d/sudo
 
