@@ -18,7 +18,7 @@ touch ~/.hushlogin
 brew install starship
 
 filename='../.zshrc' # Define the filename
-newtext="\nalias gp=git pull\nalias ga=git add\nalias gc=git commit\nalias gpush=git push"
+newtext="\nalias gp=git pull\nalias ga=git add\nalias gc=git commit\nalias gps=git push\nalias nv='nvim'\nalias f='fzf'"
 echo $newtext >> $filename
 
 # newtext="\n\nPROMPT='⚡️%B%F{green}%1~ %%%f%b '"

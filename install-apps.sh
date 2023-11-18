@@ -12,6 +12,7 @@ brew install --cask onedrive; sudo open -a onedrive
 osascript -e 'display notification "Manual settings: setta onedrive per scaricare subito tutti i file"'
 
 brew install --cask aldente; sudo open -a aldente
+# TODO controllare che mas funzioni e accedere all'app store
 brew install mas # Mac App Store command-line interface
 mas upgrade # just to be sure :)
 mas install 1459809092 || mas upgrade 1459809092; open -a accelerate                # accelerate https://apps.apple.com/us/app/accelerate-for-safari/id1459809092 
@@ -25,6 +26,7 @@ mas install 409203825 || mas upgrade 409203825;                                 
 mas install 595191960 || mas upgrade 595191960; open -a copyclip                    # copyclip https://apps.apple.com/us/app/copyclip-clipboard-history/id595191960?mt=12
 mas install 1614659226 || mas upgrade 1614659226; open -a virtualos                 # virtualos https://apps.apple.com/it/app/virtualos/id1614659226?mt=12
 mas install 1436953057 || mas upgrade 1436953057; open -a Ghostery\ –\ Privacy\ Ad\ Blocker.app
+mas install 1365531024 || mas upgrade 1365531024; open -a 1blocker                  # https://apps.apple.com/it/app/1blocker/id1365531024
 echo "\033[0;34m If all apps are installed by now...open them to setup some preferences 🔩 \033[0m"
 
 
@@ -51,23 +53,25 @@ sudo mv /Applications/Microsoft\ Teams* /Applications/Microsoft\ Teams.app; sudo
 brew install bat
 brew install --cask hush; sudo open -a hush
 brew install --cask cookie; sudo open -a cookie
-brew install adguard; sudo open -a adguard
+brew install --cask amethyst; sudo open -a amethyst
 brew install --cask whatsapp; sudo open -a whatsapp
 brew install --cask telegram; sudo open -a telegram
 brew install --cask adguard-vpn; sudo open -a "adguard vpn"
 brew install --cask iterm2; sudo open -a iterm2
 brew install --cask rectangle; sudo open -a rectangle
 brew install tag
+brew install fzf
+brew install pandoc
 brew install tccutil # https://github.com/jacobsalmela/tccutil
 
-brew install python #-tk@3.9
-brew install python-tk@3.9
-sudo ln -s /usr/bin/python3 /usr/local/bin/python
+# brew install python #-tk@3.9
+# brew install python-tk@3.9
+# sudo ln -s /usr/bin/python3 /usr/local/bin/python
 
 brew install --cask google-chrome; sudo open -a "Google Chrome" 
 brew install --cask chromedriver
 brew install --cask mamp; rm -rf /Applications/MAMP\ PRO.app; sudo open -a mamp
-brew install --cask visual-paradigm-ce; sudo open -a "visual paradigm"
+brew install --cask visual-paradigm-ce; sudo open -a "visual paradigm ce"
 brew install --cask utm; sudo open -a utm
 brew install --cask vlc; sudo open -a vlc
 brew install --cask firefox; sudo open -a firefox
@@ -86,7 +90,7 @@ brew install --cask spotify; sudo open -a spotify
 brew install --cask the-unarchiver; sudo open -a "the unarchiver"
 # brew install --cask visual-studio; sudo open -a "visual studio"
 brew install --cask oracle-jdk-javadoc
-brew install blacktop/tap/lporg
+brew install blacktop/tap/lporg # https://github.com/blacktop/lporg organize launchpad
 brew install docker
 brew install --cask docker; sudo open -a "Docker"
 
