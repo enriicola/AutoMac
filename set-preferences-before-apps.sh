@@ -10,10 +10,7 @@ osascript -e 'tell application "System Preferences" to quit'
 # echo -e "\033[1;31m First thing first: sending alert to execute automator workflow (at 10x) while the script keep running \033[0m"
 # alert "launch the app $name from Automator at 10x velocity to set some preferences across sys, safari and finder"
 
-# TODO set night shift on and set it to sunset to sunrise
-
 sudo sh set-profile-pic.sh
-
 
 echo "\033[0;34m Changing the wallpaper 🖼 \033[0m"
 brew install wallpaper
@@ -21,9 +18,6 @@ read -p "First you have to download the wallpaper from system preferences, then 
 # TODO osascript per scaricare wallpaper e (a sto punto) per impostarlo
 osascript -e 'display notification "Manual settings: imposta sfondo desktop"'
 wallpaper set /Users/enrico/Library/Application\ Support/com.apple.mobileAssetDesktop/Catalina.heic
-# osascript -e 'tell application "Finder" to set desktop picture to POSIX file "Catalina bello.jpg"'
-# osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/enrico/Library/Application Support/com.apple.mobileAssetDesktop/Catalina.heic"'
-
 
 # TODO calibra colori schermo secondario
 sh testing.sh "calibra colori schermo secondario" 1/1/2023 10:00:00PM
