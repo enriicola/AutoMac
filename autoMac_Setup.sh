@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 # TODO: change every shebang to zsh
-#TODO initial choice if I want to save this setup or if I want to autoMac_Setup (smt like a homebrew app -> brew install autoMac, autoMac init my-config-file, autMac save filename)
+# TODO: search how to send inpunt inside a script (like when I have to press enter or type y/n to continue)
+# TODO: create a readme with all the steps to do manually ([x] = done, [ ] = to do) and open it at the beginning of the script
+# TODO initial choice if I want to save this setup or if I want to autoMac_Setup (smt like a homebrew app -> brew install autoMac, autoMac init my-config-file, autMac save filename)
 # https://www.youtube.com/watch?v=fbyrLo6yx8M
 
 echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m"
