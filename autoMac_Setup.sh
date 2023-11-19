@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+# TODO: add a script to delete the cloned repo at the end
+# TODO: check if has sense to install rclone, maybe do some tests before -> https://rclone.org ...
+# TODO: ... study or try restic to backup and then upload it to onedrive via script -> https://restic.net
 # TODO: "check com.apple.finder.plist" to find preferences info
 # TODO: change every shebang to zsh
-# TODO: add a mascot emoji at the beginning of every echo 🚀🤖
-#TODO initial choice if I want to save this setup or if I want to autoMac_Setup (smt like a homebrew app -> brew install autoMac, autoMac init my-config-file, autMac save filename)
+# TODO: add a mascot emoji at the beginning of every echo 🚀🤖🪞
+# TODO initial choice if I want to save this setup or if I want to autoMac_Setup (smt like a homebrew app -> brew install autoMac, autoMac init my-config-file, autMac save filename)
 # https://www.youtube.com/watch?v=fbyrLo6yx8M
 
 echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m"

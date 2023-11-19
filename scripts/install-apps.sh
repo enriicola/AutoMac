@@ -40,6 +40,7 @@ git config --global user.email "enrico.pezzano@outlook.it"
 git config --global user.name "EnricoPezzano"
 brew install gh
 
+brew install node
 brew install neovim
 echo "\033[0;34m Installing neovim plugins 📝 \033[0m"
 git clone https://github.com/github/copilot.vim.git \~/.config/nvim/pack/github/start/copilot.vim
