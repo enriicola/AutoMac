@@ -68,6 +68,7 @@ brew install tccutil # https://github.com/jacobsalmela/tccutil
 # brew install python-tk@3.9
 # sudo ln -s /usr/bin/python3 /usr/local/bin/python
 
+brew install --cask dotnet
 brew install --cask google-chrome; sudo open -a "Google Chrome" 
 brew install --cask chromedriver
 brew install --cask mamp; rm -rf /Applications/MAMP\ PRO.app; sudo open -a mamp

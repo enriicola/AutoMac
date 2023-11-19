@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
+# TODO: "check com.apple.finder.plist" to find preferences info
 # TODO: change every shebang to zsh
-# TODO: add a mascot emoji at the beginning of every echo
+# TODO: add a mascot emoji at the beginning of every echo 🚀🤖
 #TODO initial choice if I want to save this setup or if I want to autoMac_Setup (smt like a homebrew app -> brew install autoMac, autoMac init my-config-file, autMac save filename)
 # https://www.youtube.com/watch?v=fbyrLo6yx8M
 
