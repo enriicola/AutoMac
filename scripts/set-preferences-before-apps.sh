@@ -4,6 +4,8 @@
 osascript -e 'tell application "System Preferences" to quit'
 
 # TODO setta tutte le preferenze di sistema finder, safari, etc con la registrazione di automator
+# TODO setta scroll velocity at max (accessibility->pointer control->trackpad options->tracking speed->fast)
+# TODO drag things with 3 fingers (accessibility->pointer control->trackpad options->enable dragging->3 fingers)
 # TODO finder->preferenze->avanzate->quando eseeguo una ricerca=cerca nella cartella attuale
 # TODO manda notifica che dica di eseguire quel workflow dall’interno a 10x
 # i.e.:
@@ -154,6 +156,8 @@ echo -e "\033[1;31m Must restart Mac to take effect 🔁 \033[0m"
 echo "\033[0;34m Changing screenshot default to jpg (replace with png to undo) 📸 \033[0m"
 defaults write com.apple.screencapture type jpg
 
+defaults write com.apple.screencapture disable-shadow -bool true 
+
 echo "\033[0;34m Making hidden apps transparent 🫥 \033[0m"
 defaults write com.apple.Dock showhidden -bool TRUE
 
@@ -174,3 +178,4 @@ for corner in tl tr br bl; # Turn off hot-corners
 defaults write com.apple.dock "wvous-br-corner" -int 4  # mostra scrivania
 defaults write com.apple.dock "wvous-bl-corner" -int 14 # nota rapida
 killall Dock
+killall SystemUIServer
