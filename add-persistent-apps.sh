@@ -1,7 +1,4 @@
-#!/usr/bin/env zsh
-
-# TODO add News.app
-# TODO adjust them in alphabetical order
+#!/usr/bin/env bash
 
 echo "\033[0;34m Now I will pin to the Dock some of the installed apps 🌟 \033[0m"
 defaults write com.apple.dock persistent-apps -array
