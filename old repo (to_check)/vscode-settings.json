@@ -1,0 +1,124 @@
+{
+  "diffEditor.renderSideBySide": false,
+  "editor.accessibilitySupport": "off",
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "explorer.confirmDelete": false,
+  "files.exclude": {
+    "**/.git": false
+  },
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "security.workspace.trust.banner": "always",
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.untrustedFiles": "open",
+  "todo-tree.filtering.includeHiddenFiles": true,
+  "workbench.colorTheme": "Default Dark+",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "workbench.editorAssociations": {
+    "*.plist": "default"
+  },
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairsHorizontal": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "files.autoSave": "afterDelay",
+  "editor.inlineSuggest.showToolbar": "always",
+  "terminal.integrated.fontFamily": "MesloLGL Nerd Font",
+  "editor.fontSize": 11,
+
+
+"latex-workshop.latex.tools": [
+  {
+   "name": "latexmk",
+   "command": "latexmk",
+   "args": [
+    "-synctex=1",
+    "-interaction=nonstopmode",
+    "-file-line-error",
+    "-pdf",
+    "-outdir=%OUTDIR%",
+    "%DOC%"
+   ],
+   "env": {}
+  },
+  {
+   "name": "xelatex",
+   "command": "xelatex",
+   "args": [
+    "-synctex=1",
+    "-interaction=nonstopmode",
+    "-file-line-error",
+    "%DOC%"
+   ],
+   "env": {}
+  },
+  {
+   "name": "pdflatex",
+   "command": "pdflatex",
+   "args": [
+    "-synctex=1",
+    "-interaction=nonstopmode",
+    "-file-line-error",
+    "%DOC%"
+   ],
+   "env": {}
+  },
+  {
+   "name": "bibtex",
+   "command": "bibtex",
+   "args": [
+    "%DOCFILE%"
+   ],
+   "env": {}
+  }
+ ],
+ 
+
+"latex-workshop.latex.recipes": [
+  {
+   "name": "pdfLaTeX",
+   "tools": [
+    "pdflatex"
+   ]
+  },
+  {
+   "name": "latexmk 🔃",
+   "tools": [
+    "latexmk"
+   ]
+  },
+  {
+   "name": "xelatex",
+   "tools": [
+    "xelatex"
+   ]
+  },
+  {
+   "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+   "tools": [
+    "pdflatex",
+    "bibtex",
+    "pdflatex",
+    "pdflatex"
+   ]
+  },
+  {
+  "name": "xelatex ➞ bibtex ➞ xelatex`×2",
+  "tools": [
+    "xelatex",
+    "bibtex",
+    "xelatex",
+    "xelatex"
+   ]
+  }
+],
+"editor.wordWrap": "on"
+}

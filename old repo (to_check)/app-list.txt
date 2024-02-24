@@ -1,0 +1,45 @@
+4K Video Downloader.app
+Accelerate.app
+AdGuard VPN.app
+AdGuard.app
+AlDente.app
+AltTab.app
+AppCleaner.app
+CheatSheet.app
+CopyClip.app
+Discord.app
+Docker.app
+Dropover.app
+Enki.app
+Fig.app
+Firefox.app
+Google Chrome.app
+HandBrake.app
+IntelliJ IDEA.app
+Keynote.app
+Lunar.app
+MAMP
+Microsoft Teams.app
+Nightshift.app
+Numbers.app
+OneDrive.app
+Pages.app
+PiPer.app
+Rectangle.app
+Rider.app
+Safari.app
+Spotify.app
+Telegram.app
+The Unarchiver.app
+UTM.app
+Utilities
+VLC.app
+VMware Fusion.app
+Visual Paradigm CE.app
+Visual Studio Code.app
+WhatsApp.app
+eToro.app
+iMovie.app
+iMyTrans.app
+iTerm.app
+virtualOS.app
