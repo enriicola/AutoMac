@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# https://apps.apple.com/it/app/dark-reader-for-safari/id1438243180?l=en-GB
+# https://apps.apple.com/it/app/adblock-plus-for-safari-abp/id1432731683?l=en-GB&mt=12
+# wget https://github.com/sbmpost/AutoRaise/raw/master/AutoRaise.dmg
+# wget https://raw.githubusercontent.com/enriicola/autoMac_Setup/main/wp.jpg
+# wget https://raw.githubusercontent.com/enriicola/autoMac_Setup/main/catalina_bello.jpg
 # TODO: add a script to download rosetta
 # TODO: add a script to delete the cloned repo at the end
 # TODO: check if has sense to install rclone, maybe do some tests before -> https://rclone.org ...
