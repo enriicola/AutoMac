@@ -1,8 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
+# i think that the shebang is not necessary because I'm running this script with sh
 
 # https://apps.apple.com/it/app/dark-reader-for-safari/id1438243180?l=en-GB
 # https://apps.apple.com/it/app/adblock-plus-for-safari-abp/id1432731683?l=en-GB&mt=12
 # wget https://github.com/sbmpost/AutoRaise/raw/master/AutoRaise.dmg
+# sh <(curl https://raw.githubusercontent.com/enriicola/automac/main/hello.sh) 😁
 # wget https://raw.githubusercontent.com/enriicola/autoMac_Setup/main/wp.jpg
 # wget https://raw.githubusercontent.com/enriicola/autoMac_Setup/main/catalina_bello.jpg
 # TODO: add a script to download rosetta

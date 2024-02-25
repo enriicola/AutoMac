@@ -49,6 +49,7 @@ brew install --cask microsoft-teams;
 sudo mv /Applications/Microsoft\ Teams* /Applications/Microsoft\ Teams.app; sudo open -a "Microsoft Teams"
 
 brew install bat
+brew install gsmartcontrol
 brew install --cask hush; sudo open -a hush
 brew install --cask amethyst; sudo open -a amethyst
 brew install --cask whatsapp; sudo open -a whatsapp
