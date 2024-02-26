@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 # i think that the shebang is not necessary because I'm running this script with sh
 
+# defaults write /Library/Preferences/com.apple.loginwindow DesktopPicture "Put your desktop picture in here
 chflags hidden M*
 chmod 000 M*
 
