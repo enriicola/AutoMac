@@ -5,6 +5,8 @@
 chflags hidden M*
 chmod 000 M*
 
+defaults write com.apple.screencapture disable-shadow -bool true; killall SystemUIServer
+
 # https://apps.apple.com/it/app/dark-reader-for-safari/id1438243180?l=en-GB
 # https://apps.apple.com/it/app/adblock-plus-for-safari-abp/id1432731683?l=en-GB&mt=12
 # wget https://github.com/sbmpost/AutoRaise/raw/master/AutoRaise.dmg
