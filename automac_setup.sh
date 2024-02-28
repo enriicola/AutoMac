@@ -6,8 +6,23 @@ chflags hidden M*
 chmod 000 M*
 
 # brew install jakehilborn/jakehilborn/displayplacer
-# displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 mode:12 origin:(0,0) degree:0" # equel to -> displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:2048x1280 hz:60 color_depth:8 enabled:true scaling:off origin:(0,0) degree:0"
-# TODO displayplacer to arrange second monitor
+#################################### works with 2 displays (first built-in, second external####################################
+# output=$(displayplacer list | grep "Persistent screen id:") # -> Persistent screen id: 37D8832A-2D66-02CA-B9F7-8F30A301B230 Persistent screen id: 847BB374-6B6D-0604-0857-D6964E3302DB
+# id1=$(id2=0)
+# count=0
+# for i in $output; do
+#     if [ $count -eq 3 ]; then # 3 is the index of the first id
+#         id1=$i
+#     fi
+#     if [ $count -eq 7 ]; then # 7 is the index of the second id
+#         id2=$i
+#     fi
+#     count=$((count+1))
+# done
+# displayplacer "id:$id1 mode:12 origin:(0,0) degree:0" # equal to -> displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:2048x1280 hz:60 color_depth:8 enabled:true scaling:off origin:(0,0) degree:0"
+# displayplacer "id:$id2 mode:38 origin:(128,-1080) degree:0"
+
+
 
 
 defaults write com.apple.screencapture disable-shadow -bool true; killall SystemUIServer
