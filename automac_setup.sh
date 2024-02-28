@@ -5,6 +5,11 @@
 chflags hidden M*
 chmod 000 M*
 
+# brew install jakehilborn/jakehilborn/displayplacer
+# displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 mode:12 origin:(0,0) degree:0" # equel to -> displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:2048x1280 hz:60 color_depth:8 enabled:true scaling:off origin:(0,0) degree:0"
+# TODO displayplacer to arrange second monitor
+
+
 defaults write com.apple.screencapture disable-shadow -bool true; killall SystemUIServer
 
 # https://apps.apple.com/it/app/dark-reader-for-safari/id1438243180?l=en-GB
