@@ -53,8 +53,13 @@ echo "\033[0;36m Welcome $(whoami)! 🦆 \n my-mac-setup's started! 🚀 \033[0m
 
 
 echo "\033[0;34m Setting up touch id for sudo 🖐 \033[0m"
-sudo_settings=$'# sudo: auth account password session\\nauth       sufficient     pam_tid.so\\nauth       sufficient     pam_smartcard.so\\nauth       required       pam_opendirectory.so\\naccount    required       pam_permit.so\\npassword   required       pam_deny.so\\nsession    required       pam_permit.so'
-echo $sudo_settings > /etc/pam.d/sudo
+# sudo_settings=$'# sudo: auth account password session\\nauth       sufficient     pam_tid.so\\nauth       sufficient     pam_smartcard.so\\nauth       required       pam_opendirectory.so\\naccount    required       pam_permit.so\\npassword   required       pam_deny.so\\nsession    required       pam_permit.so'
+# echo $sudo_settings > /etc/pam.d/sudo
+
+sudo sed 's/#auth/auth/' /etc/pam.d/sudo_local.template > tmp.txt && sudo mv tmp.txt /etc/pam.d/sudo_local # enable touch id for sudo, from maoos sonoma onwards :)
+
+
+
 
 
 ####################################################################################################################################################################################
