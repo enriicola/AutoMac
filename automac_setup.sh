@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 # i think that the shebang is not necessary because I'm running this script with sh
 
+
+# TODO: set "key repeat rate" to fast and "delay until repeat"" to short
+
 # defaults write /Library/Preferences/com.apple.loginwindow DesktopPicture "Put your desktop picture in here
 chflags hidden M*
 chmod 000 M*
