@@ -392,6 +392,7 @@ brew install --cask chromedriver
 brew install --cask mamp; rm -rf /Applications/MAMP\ PRO.app; sudo open -a mamp
 brew install --cask visual-paradigm-ce; sudo open -a "visual paradigm ce"
 brew install --cask utm; sudo open -a utm
+brew install qemu
 brew install --cask vlc; sudo open -a vlc
 brew install --cask firefox; sudo open -a firefox
 brew install --cask visual-studio-code; sudo open -a "visual studio code"
@@ -648,8 +649,9 @@ cp .launchpad.yaml $HOME/.launchpad.yaml
 lporg load /Users/enrico/.launchpad.yaml
 
 
-read -p "Press enter to restart MacOs 🔁"
-shutdown -r now
+# read -p "Press enter to restart MacOs 🔁"
+# shutdown -r now
+# shutdown -r +30 "System will reboot"
 
 ######################################################TODO add credits to dev of apps i used######################################################
 
