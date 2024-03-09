@@ -404,6 +404,7 @@ brew install --cask alt-tab; sudo open -a alttab
 brew install --cask cheatsheet; sudo open -a cheatsheet
 brew install --cask appcleaner; sudo open -a appcleaner
 brew install maven
+brew install lsusb
 brew install --cask handbrake; sudo open -a handbrake
 brew install --cask spotify; sudo open -a spotify
 brew install --cask the-unarchiver; sudo open -a "the unarchiver"
