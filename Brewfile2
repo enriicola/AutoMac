@@ -1,0 +1,6 @@
+tap "teamookla/speedtest"
+brew "teamookla/speedtest/speedtest"
+brew "wget"
+cask "whatsapp"
+mas "PiPer", id: 1421915518
+vscode "withfig.fig"
