@@ -387,6 +387,7 @@ brew install tccutil # https://github.com/jacobsalmela/tccutil
 
 # TODO open after having installed all the apps, terminal doesn't find them right after installation
 brew install --cask dotnet
+brew install --cask balenaetcher
 brew install --cask google-chrome; sudo open -a "Google Chrome" 
 brew install --cask chromedriver
 brew install --cask mamp; rm -rf /Applications/MAMP\ PRO.app; sudo open -a mamp
