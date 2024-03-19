@@ -310,7 +310,6 @@ killall Dock
 # end of set-preferences-before-apps.sh---------------------------------------------------------------------------------------------------------------------------------------------
 
 # sh install-vs.sh
-# sh install-docker.sh
 
 ####################################################################################################################################################################################
 # start of install-apps.sh##########################################################################################################################################################
@@ -413,7 +412,6 @@ brew install --cask the-unarchiver; sudo open -a "the unarchiver"
 # brew install --cask visual-studio; sudo open -a "visual studio"
 brew install --cask oracle-jdk-javadoc
 brew install blacktop/tap/lporg # https://github.com/blacktop/lporg organize launchpad
-brew install docker
 brew install --cask docker; sudo open -a "Docker"
 
 ####################################################################################################################################################################################
