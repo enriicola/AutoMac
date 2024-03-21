@@ -443,7 +443,8 @@ echo $newtext >> $filename
 newtext="\n\n# Starship prompt\n# eval \"\$(starship init zsh)\""
 echo $newtext >> $filename
 
-# alias uninstall="brew uninstall --zap"
+# TODO alias uninstall="brew uninstall --zap"
+# TODO alias py=python3
 
 mkdir -p ~/.config && touch ~/.config/starship.toml
 # starship preset plain-text-symbols -o ~/.config/starship.toml
