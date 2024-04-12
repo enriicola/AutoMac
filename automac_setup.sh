@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 # i think that the shebang is not necessary because I'm running this script with sh
 
+# TODO: add a .vimrc file with "syntax on"
+# TODO add something to don't print anything but a percentage of the progress of the script (check how to do it) ... (https://unix.stackexchange.com/questions/32651/how-to-show-the-percentage-progress-of-script-execution-in-unix)
 # 🏎️ TODO to use as mascotte (auto <--> automac) 😝
 # 🍏🧃🍎 TODO to use as beginning of success/error messages
 # TODO: set "key repeat rate" to fast and "delay until repeat"" to short
