@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 # i think that the shebang is not necessary because I'm running this script with sh
 
+# TODO: remove all echos... and leave only the stderr ones
+# TODO: add a check to see if a command return an error
 # TODO: add a .vimrc file with "syntax on"
 # TODO add something to don't print anything but a percentage of the progress of the script (check how to do it) ... (https://unix.stackexchange.com/questions/32651/how-to-show-the-percentage-progress-of-script-execution-in-unix)
 # 🏎️ TODO to use as mascotte (auto <--> automac) 😝
@@ -477,8 +479,10 @@ sudo xcodebuild -license
 brew upgrade # just to be sure :)
 brew cleanup
 
-echo "\033[0;34m Installing rust 🦀 \033[0m"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# echo "\033[0;34m Installing rust 🦀 \033[0m"
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+brew install rust
+
 # end of install-apps.sh------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 brew install --cask vmware-fusion

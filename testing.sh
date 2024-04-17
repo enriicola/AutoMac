@@ -55,6 +55,12 @@
 
 # ------------------------------------------------------------------------------------------------------------
 
+sh hello.s 2> error.log
+# cat error.log
+
+
+last_command=$(tail -n 1 ~/.zsh_history)
+echo "The last command executed was: $last_command"
 
 
 # :)
