@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 # i think that the shebang is not necessary because I'm running this script with sh
 
+# TODO: install python via the official website using the official package and installer | DO NOT INSTALL PYTHON VIA BREW
+# TODO: install all the apps with brew bundle
 # TODO: remove all echos... and leave only the stderr ones
 # TODO: add a check to see if a command return an error
 # TODO: add a .vimrc file with "syntax on"
@@ -368,6 +370,8 @@ sudo mv /Applications/Microsoft\ Teams* /Applications/Microsoft\ Teams.app; sudo
 
 brew install bat
 brew install gsmartcontrol
+
+brew install gh
 
 brew tap teamookla/speedtest
 brew update
