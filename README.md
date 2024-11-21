@@ -1,3 +1,6 @@
+## automatic + macos = automac 
+# AutoMac :)
+
 ## Hello there!
 
 This is a little bash script in MacOs to setup and install all of my stuff and as I want to.
