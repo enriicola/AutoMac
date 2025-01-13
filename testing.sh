@@ -1,4 +1,9 @@
 #!/usr/bin/env zsh
+##############################
+# brew install cirruslabs/cli/tart
+# tart clone ghcr.io/cirruslabs/macos-sonoma-base:latest sonoma-base
+# tart run sonoma-base
+##############################
 
 # TODO setta tutte le preferenze di sistema finder, safari, etc con la registrazione di automator
 # +

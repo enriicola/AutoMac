@@ -1,6 +1,21 @@
 #!/usr/bin/env zsh
 # i think that the shebang is not necessary because I'm running this script with sh
 
+#TODO add ranger configuration for previewing files and images
+#TODO add "sudo spctl --master-disable" 
+####TODO use this loop to launch brew install <option> <something> and install everything in parallel
+# for((i=$START; i<=$END; i++));
+# do
+#    osascript -e "tell application \"Terminal\"" -e "do script \"sh /Users/enrico/Desktop/containerization-best-practices/testing/test-aux.sh $i\"" -e "end tell"
+#    # echo 🧪testing id $i
+# done
+#####
+
+# TODO install mouseless (see youtube tutorial)
+# TODO refactor all code blocks with functions
+# TODO: install Ghostery via cli
+# TODO brew install --cask deepl
+# TODO: to check if brew installed correctly, just check if $? is 0 or 1
 # TODO: install python via the official website using the official package and installer | DO NOT INSTALL PYTHON VIA BREW
 # TODO: install all the apps with brew bundle
 # TODO: remove all echos... and leave only the stderr ones
@@ -10,6 +25,10 @@
 # 🏎️ TODO to use as mascotte (auto <--> automac) 😝
 # 🍏🧃🍎 TODO to use as beginning of success/error messages
 # TODO: set "key repeat rate" to fast and "delay until repeat"" to short
+
+# hello() { # example-wise function 
+#   echo "Hello!"
+# }
 
 # defaults write /Library/Preferences/com.apple.loginwindow DesktopPicture "Put your desktop picture in here
 chflags hidden M*
@@ -124,13 +143,12 @@ fi
 
 
 echo "\033[0;34m Changing the wallpaper 🖼 \033[0m"
-brew install wallpaper
+# brew install wallpaper
 read -p "First you have to download the wallpaper from system preferences, then press any key to continue..."
 # TODO osascript per scaricare wallpaper e (a sto punto) per impostarlo
-osascript -e 'display notification "Manual settings: imposta sfondo desktop"'
-wallpaper set /Users/enrico/Library/Application\ Support/com.apple.mobileAssetDesktop/Catalina.heic
-# osascript -e 'tell application "Finder" to set desktop picture to POSIX file "Catalina bello.jpg"'
-# osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/enrico/Library/Application Support/com.apple.mobileAssetDesktop/Catalina.heic"'
+# osascript -e 'display notification "Manual settings: imposta sfondo desktop"'
+# wallpaper set /Users/enrico/Library/Application\ Support/com.apple.mobileAssetDesktop/Catalina.heic
+sudo osascript -e 'tell application "System Events" to set picture of every desktop to "/Users/enrico/Desktop/AutoMac/catalina_bello.jpg"'
 
 
 # TODO calibra colori schermo secondario
@@ -335,16 +353,13 @@ brew install --cask aldente; sudo open -a aldente
 # TODO controllare che mas funzioni e accedere all'app store
 brew install mas # Mac App Store command-line interface
 mas upgrade # just to be sure :)
-mas install 408981434 || mas upgrade 408981434; open -a imovie                      # https://apps.apple.com/it/app/imovie/id408981434?l=en-GB&mt=12
-mas install 1459809092 || mas upgrade 1459809092; open -a accelerate                # accelerate https://apps.apple.com/us/app/accelerate-for-safari/id1459809092 
-mas install 1421915518 || mas upgrade 1421915518; open -a piper                     # piper https://apps.apple.com/it/app/piper/id1421915518?mt=12
-mas install 993753145 || mas upgrade 993753145; open -a enki                        # enki https://apps.apple.com/it/app/enki-learn-coding-programming/id993753145
-mas install 674984916 || mas upgrade 674984916; open -a etoro                       # etoro https://apps.apple.com/il/app/etoro-trade-stocks-crypto/id674984916
-mas install 409201541 || mas upgrade 409201541; open -a pages                       # pages https://apps.apple.com/it/app/pages/id409201541?mt=12
-mas install 409183694 || mas upgrade 409183694; open -a keynote                     # keynote https://apps.apple.com/it/app/keynote/id409183694?mt=12
-mas install 409203825 || mas upgrade 409203825; open -a numbers                     # numbers https://apps.apple.com/it/app/numbers/id409203825?mt=12
-mas install 595191960 || mas upgrade 595191960; open -a copyclip                    # copyclip https://apps.apple.com/us/app/copyclip-clipboard-history/id595191960?mt=12
-mas install 1614659226 || mas upgrade 1614659226; open -a virtualos                 # virtualos https://apps.apple.com/it/app/virtualos/id1614659226?mt=12
+mas install 408981434 || mas upgrade 408981434; open -a imovie                       # https://apps.apple.com/it/app/imovie/id408981434?l=en-GB&mt=12
+mas install 1459809092 || mas upgrade 1459809092; open -a accelerate                 # accelerate https://apps.apple.com/us/app/accelerate-for-safari/id1459809092 
+mas install 993753145 || mas upgrade 993753145; open -a enki                         # enki https://apps.apple.com/it/app/enki-learn-coding-programming/id993753145
+mas install 595191960 || mas upgrade 595191960; open -a copyclip                     # copyclip https://apps.apple.com/us/app/copyclip-clipboard-history/id595191960?mt=12
+mas install 1614659226 || mas upgrade 1614659226; open -a virtualos                  # virtualos https://apps.apple.com/it/app/virtualos/id1614659226?mt=12
+mas install 1643308157 || mas upgrade 1643308157; open -a "Enhancements For Youtube" # Enhancements For Youtube 
+mas install 1611378436 || mas upgrade 1611378436; open -a "Pure Paste"                # Pure Paste
 echo "\033[0;34m If all apps are installed by now...open them to setup some preferences 🔩 \033[0m"
 
 
@@ -352,6 +367,8 @@ echo "\033[0;34m If all apps are installed by now...open them to setup some pref
 
 # open -a pages; open -a keynote; open -a numbers
 
+
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 
 
 # git config --global user.email "enrico.pezzano@outlook.it"
@@ -364,10 +381,10 @@ git clone https://github.com/github/copilot.vim.git \~/.config/nvim/pack/github/
 echo "\033[0;34m Start Neovim and invoke ":Copilot setup" ✅ \033[0m"
 nvim
 
-brew install --cask microsoft-teams; 
-# rename to Microsoft Teams.app using regular expression
-sudo mv /Applications/Microsoft\ Teams* /Applications/Microsoft\ Teams.app; sudo open -a "Microsoft Teams"
 
+brew install htop
+brew install --cask microsoft-teams; 
+brew install --cask warp; sudo open -a warp
 brew install bat
 brew install gsmartcontrol
 
@@ -379,15 +396,19 @@ brew install speedtest --force #https://www.speedtest.net/apps/cli
 
 brew install --cask hush; sudo open -a hush
 brew install --cask amethyst; sudo open -a amethyst
-brew install --cask whatsapp; sudo open -a whatsapp
-brew install --cask telegram; sudo open -a telegram
-brew install --cask iterm2; sudo open -a iterm2
-brew install --cask rectangle; sudo open -a rectangle
+brew install --cask beeper; sudo open -a Beeper.app
 brew install tag
 brew install fzf
+brew install trash
+brew install topgrade
+brew install yt-dlp
+brew install shellcheck
+brew install shfmt
+brew install pidof 
 brew install pandoc
 brew install --cask reverso
 brew install tccutil # https://github.com/jacobsalmela/tccutil
+brew install ranger
 
 # brew install python #-tk@3.9
 # brew install python-tk@3.9
@@ -405,7 +426,6 @@ brew install qemu
 brew install --cask vlc; sudo open -a vlc
 brew install --cask firefox; sudo open -a firefox
 brew install --cask visual-studio-code; sudo open -a "visual studio code"
-brew install --cask 4k-video-downloader; sudo open -a "4k video downloader"
 brew install --cask discord; sudo open -a discord
 brew install --cask intellij-idea; sudo open -a "intellij idea"
 brew install --cask rider; sudo open -a rider
@@ -417,10 +437,30 @@ brew install lsusb
 brew install --cask handbrake; sudo open -a handbrake
 brew install --cask spotify; sudo open -a spotify
 brew install --cask the-unarchiver; sudo open -a "the unarchiver"
-# brew install --cask visual-studio; sudo open -a "visual studio"
 brew install --cask oracle-jdk-javadoc
 brew install blacktop/tap/lporg # https://github.com/blacktop/lporg organize launchpad
 brew install --cask docker; sudo open -a "Docker"
+brew install zig
+brew install entr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ####################################################################################################################################################################################
 # start of customize-terminal.sh####################################################################################################################################################
@@ -431,7 +471,8 @@ echo "\033[0;34m Enabling remote login (turn on SSH in the GUI) 💻 \033[0m"
 sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 # disable: sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
 
-brew install fig; sudo open -a fig
+#brew install fig; sudo open -a fig
+brew install --cask amazon-q; sudo open -a amazon-q
 
 #TODO: if fig integrations status daemon == Status: None then
         # fig integrations install daemon
@@ -442,14 +483,18 @@ touch ~/.hushlogin
 
 brew install starship
 
-filename='../.zshrc' # Define the filename
-newtext="\nalias gp=git pull\nalias ga=git add\nalias gc=git commit\nalias gps=git push\nalias nv='nvim'\nalias f='fzf'"
-echo $newtext >> $filename
 
-# newtext="\n\nPROMPT='⚡️%B%F{green}%1~ %%%f%b '"
+#TODO for all aliases # echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
+# # Define the filename
+# filename='../.zshrc' 
+
+# newtext="\nalias gp=git pull\nalias ga=git add\nalias gc=git commit\nalias gps=git push\nalias nv='nvim'\nalias f='fzf'"
 # echo $newtext >> $filename
-newtext="\n\n# Starship prompt\n# eval \"\$(starship init zsh)\""
-echo $newtext >> $filename
+
+# # newtext="\n\nPROMPT='⚡️%B%F{green}%1~ %%%f%b '"
+# # echo $newtext >> $filename
+# newtext="\n\n# Starship prompt\n# eval \"\$(starship init zsh)\""
+# echo $newtext >> $filename
 
 # TODO alias uninstall="brew uninstall --zap"
 # TODO alias py=python3
@@ -457,13 +502,13 @@ echo $newtext >> $filename
 mkdir -p ~/.config && touch ~/.config/starship.toml
 # starship preset plain-text-symbols -o ~/.config/starship.toml
 
-brew tap homebrew/cask-fonts
+# brew tap homebrew/cask-fonts
 brew install --cask font-meslo-lg-nerd-font
 brew install --cask font-roboto-slab
 brew install --cask font-roboto-slab
 brew install --cask font-fira-sans
 
-cp ~/Library/Fonts/* /Library/Fonts/
+sudo cp ~/Library/Fonts/* /Library/Fonts/
 
 newtext="osascript -e "tell application \"Terminal\" to set the font name of window 1 to \"MesloLGL Nerd Font\"""
 echo $newtext >> $filename
@@ -508,8 +553,6 @@ open -a copyclip
 # for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done
 # rm -r movies && rm bin && rmdir applicazioni
 sudo rm -rf Public/ 
-sudo rm -rf Movies/
-sudo rm -rf Music/
 
 echo "\033[0;34m Syncing OneDrive on desktop... 🌥 \033[0m"
 rm -r /Users/enrico/Desktop && ln -s -n /Users/enrico/onedrive\ -\ unige.it /Users/enrico/Desktop
@@ -634,7 +677,6 @@ defaults write com.apple.dock persistent-apps -array-add "${Applications}Visual 
 defaults write com.apple.dock persistent-apps -array-add "${Applications}MAMP/MAMP.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}IntelliJ IDEA.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Rider.app${end}"
-# defaults write com.apple.dock persistent-apps -array-add "${Applications}Visual Studio.app${end}" 
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Visual Studio Code.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}Docker.app${end}"
 defaults write com.apple.dock persistent-apps -array-add "${Applications}UTM.app${end}"
@@ -679,13 +721,7 @@ lporg load /Users/enrico/.launchpad.yaml
 # brew install --cask xquartz
 # brew install exiftool
 # brew install --cask eclipse-java
-# brew install --cask warp; sudo open -a warp
-# defaults write com.apple.dock persistent-apps -array-add "${Applications}Warp.app${end}"
-
-# /usr/bin/automator ~/OneDrive\ -\ unige.it/scrivania/my_projects/automated_setup/OneDrive_aliasses_for_Desktop.workflow
-
-# ANSI escape codes:
-# Black        0;30     Dark Gray     1;30
+# Red          0;31     Light Red     1;31
 # Red          0;31     Light Red     1;31
 # Green        0;32     Light Green   1;32
 # Brown/Orange 0;33     Yellow        1;33
@@ -712,3 +748,19 @@ lporg load /Users/enrico/.launchpad.yaml
 # end
 
 # curl wttr.in/genova # prints the weather in genova on the terminal
+
+### notes ###
+# curl https://raw.githubusercontent.com/enriicola/automac/main/hello.sh | sh
+# curl -Ls https://tinyurl.com/amhello | sh
+# sh <(curl https://raw.githubusercontent.com/enriicola/automac/main/hello.sh)
+# sh <(curl -Ls https://tinyurl.com/amhello)
+
+# curl https://raw.githubusercontent.com/enriicola/automac/main/automac.sh | sh
+# curl -Ls https://tinyurl.com/automacsh | sh
+# sh <(curl https://raw.githubusercontent.com/enriicola/automac/main/automac.sh)
+# sh <(curl -Ls https://tinyurl.com/automacsh)
+
+# brew install cirruslabs/cli/tart
+# tart clone ghcr.io/cirruslabs/macos-sonoma-base:latest sonoma-base
+# tart run sonoma-base
+### end notes ###

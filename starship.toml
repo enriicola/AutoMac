@@ -1,0 +1,9 @@
+[status]
+disabled = false
+format = """
+[🛑 $status](bold red)\
+\n \
+"""
+symbol = ''
+success_symbol = '' # Do not display anything on success
+
