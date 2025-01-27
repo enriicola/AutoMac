@@ -369,7 +369,9 @@ echo "\033[0;34m If all apps are installed by now...open them to setup some pref
 
 
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-
+# !!!
+# atuin dotfiles alias set hello "echo hello"
+# ^^^
 
 # git config --global user.email "enrico.pezzano@outlook.it"
 # git config --global user.name "EnricoPezzano"
