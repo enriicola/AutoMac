@@ -11,6 +11,7 @@
 # done
 #####
 
+# TODO install disk inventory x
 # TODO install mouseless (see youtube tutorial)
 # TODO refactor all code blocks with functions
 # TODO: install Ghostery via cli
