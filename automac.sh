@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 # i think that the shebang is not necessary because I'm running this script with sh
 
+# https://github.com/jesseduffield/lazydocker
 #TODO add ranger configuration for previewing files and images
 #TODO add "sudo spctl --master-disable" 
 ####TODO use this loop to launch brew install <option> <something> and install everything in parallel
